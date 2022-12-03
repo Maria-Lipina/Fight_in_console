@@ -5,7 +5,7 @@ import game.chars.Coordinates;
 import java.util.Collections;
 
 public class ConsoleView {
-    public static void field(int teamCount, int fieldSize) { //по сути я могла бы обращаться напрямую к полям в Main вместо параметров. Хотя подсветка конечно это приятно
+    public static void field() { //по сути я могла бы обращаться напрямую к полям в Main вместо параметров. Хотя подсветка конечно это приятно
         //Завести здесь один-два трингбилдера вместо прямого обращения к консоли
         if (Main.step == 0) {
             System.out.println(Colors.ANSI_RED+"First step!"+Colors.ANSI_RESET);
@@ -15,26 +15,26 @@ public class ConsoleView {
 
         // Верх игровое поле
         System.out.println(
-                "\u250c" + String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
+                "\u250c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
 
         // Середина игровое поле
-        for (int i = 1; i < fieldSize; i++) {
-            System.out.println(ConsoleView.getCharFull(i,teamCount, fieldSize));
+        for (int i = 1; i < Main.FIELD_SIZE; i++) {
+            System.out.println(ConsoleView.getCharFull(i));
             System.out.println(
-                    "\u251c" + String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u253c")) + "\u2500\u2500\u2524");
+                    "\u251c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")) + "\u2500\u2500\u2524");
         }
 
         // Низ игровое поле
-        System.out.println(ConsoleView.getCharFull(fieldSize-1, teamCount, fieldSize));
+        System.out.println(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
         System.out.println(
-                "\u2514" + String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u2534")) + "\u2500\u2500\u2518");
+                "\u2514" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")) + "\u2500\u2500\u2518");
         System.out.println("Press ENTER to continue. Press Q to exit");
     }
 
     private static StringBuilder charTable = new StringBuilder();
-    private static String getChar(int x, int y, int teamCount) {
+    private static String getChar(int x, int y) {
         String str = "  ";
-        for (int i = 0; i < teamCount; i++) {
+        for (int i = 0; i < Main.TEAM_SIZE; i++) {
             if (Main.lightSide.get(i).position.isSame(new Coordinates(x, y))) {
                 if (Main.lightSide.get(i).getStatus().equals("dead")) {
                     str = Colors.ANSI_RED + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
@@ -68,11 +68,11 @@ public class ConsoleView {
         return str;
     }
 
-    public static String getCharFull (int x, int teamCount, int fieldSize) {
+    public static String getCharFull (int x) {
         StringBuilder s = new StringBuilder();
-        s.append(String.format("\u2502%s", ConsoleView.getChar(x, 0, teamCount)));
-        for (int y = 1; y < fieldSize; y++) {
-            s.append(String.format("\u2502%s", ConsoleView.getChar(x, y, teamCount)));
+        s.append(String.format("\u2502%s", ConsoleView.getChar(x, 0)));
+        for (int y = 1; y < Main.FIELD_SIZE; y++) {
+            s.append(String.format("\u2502%s", ConsoleView.getChar(x, y)));
         }
         s.append(String.format("\u2502    %s", charTable));
         charTable.delete(0, charTable.length());

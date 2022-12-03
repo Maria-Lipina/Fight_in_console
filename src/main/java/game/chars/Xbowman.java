@@ -8,7 +8,7 @@ public class Xbowman extends BaseHero {
         super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", myParty, x, y);
         this.shoot = 16;
     }
-    public Xbowman(int attack, int protection, int[] damage, double health, int speed, String name, int shoot, ArrayList<BaseHero> myParty, int x, int y) {
+    public Xbowman(int attack, int protection, int[] damage, int health, int speed, String name, int shoot, ArrayList<BaseHero> myParty, int x, int y) {
         super(attack, protection, damage, health, speed, name, myParty, x, y);
         this.shoot = shoot;
     }
@@ -20,22 +20,22 @@ public class Xbowman extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemy, int fieldSize) {
-        if (this.status.equals("dead")) return;
-        for (BaseHero h: this.getMyParty()) {
-            if (h.getName().equals("Peasant") && h.status.equals("stand")) {
-                this.shoot++;
+    public void step(ArrayList<BaseHero> enemy) {
+        if (status.equals("dead")) return;
+        for (BaseHero h: myParty) {
+            if (h.name.equals("Peasant") && h.status.equals("stand")) {
+                shoot++;
                 h.status = "used";
                 break;
             }
         }
-        if (this.shoot<1) {this.status = "used"; return;}
+        if (shoot<1) {status = "used"; return;}
         BaseHero target = position.findNearest(enemy);
         double dist = position.distance(target.position);
-        target.damage(dist < this.getSpeed() ?
+        target.damage(dist < speed ?
                 super.damageValue(target) :
                 (super.damageValue(target)/2));
-        this.shoot--;
+        shoot--;
     }
 }
 

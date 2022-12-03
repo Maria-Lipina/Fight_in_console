@@ -26,7 +26,7 @@ public class Team {
         Comparator<BaseHero> comp = new Comparator<>() {
             @Override
             public int compare(BaseHero h1, BaseHero h2) {
-                return Integer.compare(h1.getSpeed(), h2.getSpeed());
+                return Integer.compare(h1.speed, h2.speed);
             }
         };
         team.sort(comp.reversed());

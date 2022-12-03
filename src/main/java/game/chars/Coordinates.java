@@ -1,5 +1,7 @@
 package game.chars;
 
+import game.Main;
+
 import java.util.ArrayList;
 
 public class Coordinates { //Protected class, потому что клиенту он не должен быть виден
@@ -29,6 +31,15 @@ public class Coordinates { //Protected class, потому что клиенту
             }
         }
         return enemy.get(nearestInd);
+    }
+
+    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) {
+        for (BaseHero h : party) {
+            if ((h.position.isSame(pos))
+                    || (h.position.x >= Main.FIELD_SIZE) || (h.position.y >= Main.FIELD_SIZE))
+                return false;
+        }
+        return true;
     }
 }
 

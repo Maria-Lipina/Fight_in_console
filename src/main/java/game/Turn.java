@@ -12,11 +12,9 @@ public class Turn {
         if (Main.step == 0) {
             Team.sortBySpeed(Main.lightSide);
             Team.sortBySpeed(Main.darkSide);
-            Main.lightSide.forEach(n -> n.step(Main.darkSide, Main.FIELD_SIZE));
-            Main.darkSide.forEach(n -> n.step(Main.lightSide, Main.FIELD_SIZE));
         } else {
-            Main.lightSide.forEach(n -> n.step(Main.darkSide, Main.FIELD_SIZE));
-            Main.darkSide.forEach(n -> n.step(Main.lightSide, Main.FIELD_SIZE));
+            Main.lightSide.forEach(n -> n.step(Main.darkSide));
+            Main.darkSide.forEach(n -> n.step(Main.lightSide));
         }
     }
 
@@ -30,23 +28,23 @@ public class Turn {
             phases.put(3, List.of("Peasant"));
 
             for (int i = 0; i < phases.size(); i++) {
-                steps(Main.lightSide, Main.darkSide, phases.get(i), Main.FIELD_SIZE);
+                steps(Main.lightSide, Main.darkSide, phases.get(i));
             }
         } else {
             for (int i = 0; i < phases.size(); i++) {
-                steps(Main.lightSide, Main.darkSide, phases.get(i), Main.FIELD_SIZE);
+                steps(Main.lightSide, Main.darkSide, phases.get(i));
             }
         }
     }
 
-    private static void steps(ArrayList<BaseHero> side1, ArrayList<BaseHero> side2, List<String> phase, int fieldSize) {
+    private static void steps(ArrayList<BaseHero> side1, ArrayList<BaseHero> side2, List<String> phase) {
         for (BaseHero h: side1) {
             if (!(h.getStatus().equals("dead")) && phase.contains(h.getName()))
-                h.step(side2, Main.FIELD_SIZE);
+                h.step(side2);
         }
         for (BaseHero h: side2) {
             if (!(h.getStatus().equals("dead")) && phase.contains(h.getName()))
-                h.step(side1, Main.FIELD_SIZE);
+                h.step(side1);
         }
     }
 }

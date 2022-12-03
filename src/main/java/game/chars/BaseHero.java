@@ -5,19 +5,19 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 public abstract class BaseHero implements BaseInterface, Iterator {
-    private int attack; //поменять все на protected нах. Наследникам нужно, для стандартизации и общей логики что ли
-    private int defense;
-    private int[] damage;
-    private double health; //damageValue при этом интовая, учитывая, что здесь всегда +-, то есть double не нужен
-    private double maxHealth;
-    private int speed;
-    private String name;
+    protected int attack;
+    protected int defense;
+    protected int[] damage;
+    protected int health; //damageValue при этом интовая, учитывая, что здесь всегда +-, то есть double не нужен
+    protected int maxHealth;
+    protected int speed;
+    protected String name;
     protected ArrayList<BaseHero> myParty;
     public Coordinates position; //так, чтобы оно могло быть protected. Пользователь не должен видеть
     protected String status;
     //Для логгера добавить поле id и idGetCount
 
-    public BaseHero(int attack, int defense, int[] damage, double health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y) {
+    public BaseHero(int attack, int defense, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y) {
         this.attack = attack;
         this.defense = defense;
         this.damage = damage;
@@ -37,7 +37,7 @@ public abstract class BaseHero implements BaseInterface, Iterator {
 
     public String getStatus() {
         return status;
-    } //тогда это все не нужно будет
+    }
 
     @Override
     public String getInfo() {
@@ -79,53 +79,29 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return name;
     }
 
-    public double getHealth() {
+    public int getHealth() {
         return health;
     }
 
-    public double getMaxHealth() {
-        return maxHealth;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public ArrayList<BaseHero> getMyParty() {
-        return myParty;
-    }
-
     @Override
-    public void step(ArrayList<BaseHero> enemy, int fieldSize) { //обращаться к этому полю, а не плодить аргументы
-    }
-
-    public int[] getDamage() {
-        return damage;
+    public void step(ArrayList<BaseHero> enemy) { //обращаться к этому полю, а не плодить аргументы
     }
 
     protected void damage(int damage) {
-        this.health = health - damage;
-        if (this.health <= 0) {
-            this.status = "dead";
-            this.health = 0;
+        health = health - damage;
+        if (health <= 0) {
+            status = "dead";
+            health = 0;
         }
-        if (this.health > this.maxHealth) this.health = this.maxHealth;
+        if (health > maxHealth) health = maxHealth;
     }
 
     protected int damageValue(BaseHero h) {
-        int flag = this.getAttack() - h.getDefense();
+        int flag = attack - h.defense;
         int value = 0;
-        if (flag == 0) value = ((this.getDamage()[0] + this.getDamage()[1]) / 2);
-        if (flag > 0) value = this.getDamage()[1];
-        if (flag < 0) value = this.getDamage()[0];
+        if (flag == 0) value = ((damage[0] + damage[1]) / 2);
+        if (flag > 0) value = damage[1];
+        if (flag < 0) value = damage[0];
         return value;
     }
 

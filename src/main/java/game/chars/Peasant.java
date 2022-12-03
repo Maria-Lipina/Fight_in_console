@@ -8,8 +8,8 @@ public class Peasant extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> party, int fieldSize) {
-        if (this.status.equals("dead")) return;
-        if (this.status.equals("used")) this.status = "stand";
+    public void step(ArrayList<BaseHero> party) {
+        if (status.equals("dead")) return;
+        if (status.equals("used")) status = "stand";
     }
 }
