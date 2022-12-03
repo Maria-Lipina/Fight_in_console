@@ -1,2 +1,8 @@
-package game.chars;public interface BaseInterface {
+package game.chars;
+import java.util.ArrayList;
+
+public interface BaseInterface {
+    String getInfo();
+
+    void step(ArrayList<BaseHero> enemy, int fieldSize); //хочу обращаться напрямую к field.size, а не получать как аргумент. Связь внутреннего пакета и внешнего
 }
