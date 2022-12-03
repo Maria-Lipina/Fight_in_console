@@ -25,7 +25,7 @@ public class Main {
 
         do {
             Turn.orderBySpeed();
-            ConsoleView.field();
+            System.out.println(ConsoleView.field());
             step++;
 
         } while ((char) System.in.read() != 'Q');

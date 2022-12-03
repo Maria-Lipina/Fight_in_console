@@ -5,67 +5,139 @@ import game.chars.Coordinates;
 import java.util.Collections;
 
 public class ConsoleView {
-    public static void field() { //по сути я могла бы обращаться напрямую к полям в Main вместо параметров. Хотя подсветка конечно это приятно
+    public static StringBuilder field() { //по сути я могла бы обращаться напрямую к полям в Main вместо параметров. Хотя подсветка конечно это приятно
         //Завести здесь один-два трингбилдера вместо прямого обращения к консоли
+        StringBuilder field = new StringBuilder();
         if (Main.step == 0) {
-            System.out.println(Colors.ANSI_RED+"First step!"+Colors.ANSI_RESET);
-        } else {
-            System.out.println(Colors.ANSI_RED + "Step: "+Main.step+Colors.ANSI_RESET);
+            field.append(Colors.ANSI_RED);
+            field.append("First step!");
+            field.append(Colors.ANSI_RESET);
+            field.append("\n");
+//            System.out.println(Colors.ANSI_RED+"First step!"+Colors.ANSI_RESET);
+        }
+        else {
+            field.append(Colors.ANSI_RED);
+            field.append("Step: ");
+            field.append(Main.step);
+            field.append(Colors.ANSI_RESET);
+            field.append("\n");
+//            System.out.println(Colors.ANSI_RED + "Step: "+Main.step+Colors.ANSI_RESET);
         }
 
+
         // Верх игровое поле
-        System.out.println(
-                "\u250c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
+        field.append("\u250c");
+        field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")));
+        field.append("\u2500\u2500\u2510\n");
+
+//        System.out.println(
+//                "\u250c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
 
         // Середина игровое поле
         for (int i = 1; i < Main.FIELD_SIZE; i++) {
-            System.out.println(ConsoleView.getCharFull(i));
-            System.out.println(
-                    "\u251c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")) + "\u2500\u2500\u2524");
+            field.append(ConsoleView.getCharFull(i));
+            field.append("\u251c");
+            field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")));
+            field.append("\u2500\u2500\u2524\n");
+//            System.out.println(ConsoleView.getCharFull(i));
+//            System.out.println(
+//                    "\u251c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")) + "\u2500\u2500\u2524");
         }
 
         // Низ игровое поле
-        System.out.println(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
-        System.out.println(
-                "\u2514" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")) + "\u2500\u2500\u2518");
-        System.out.println("Press ENTER to continue. Press Q to exit");
+        field.append(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
+        field.append("\u2514");
+        field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")));
+        field.append("\u2500\u2500\u2518\n");
+        field.append("Press ENTER to continue. Press Q to exit");
+
+        return field;
+//        System.out.println(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
+//        System.out.println(
+//                "\u2514" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")) + "\u2500\u2500\u2518");
+//        System.out.println("Press ENTER to continue. Press Q to exit");return
     }
 
     private static StringBuilder charTable = new StringBuilder();
-    private static String getChar(int x, int y) {
-        String str = "  ";
+    private static StringBuilder getChar(int x, int y) {
+        StringBuilder gchar = new StringBuilder("  ");
+//        String str = "  ";
         for (int i = 0; i < Main.TEAM_SIZE; i++) {
             if (Main.lightSide.get(i).position.isSame(new Coordinates(x, y))) {
                 if (Main.lightSide.get(i).getStatus().equals("dead")) {
-                    str = Colors.ANSI_RED + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
+                    gchar.delete(0,2);
+                    gchar.append(Colors.ANSI_RED);
+                    gchar.append(Main.lightSide.get(i).getName(), 0, 2);
+                    gchar.append(Colors.ANSI_RESET);
+//                    str = Colors.ANSI_RED + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 
-                    charTable.append(Colors.ANSI_RED +
-                            Main.lightSide.get(i).getName() + " HP: " + Main.lightSide.get(i).getHealth() + ", Status: " + Main.lightSide.get(i).getStatus()
-                            + Colors.ANSI_RESET + "    ");
+                    charTable.append(Colors.ANSI_RED);
+                    charTable.append(Main.lightSide.get(i).getName());
+                    charTable.append(" HP: ");
+                    charTable.append(Main.lightSide.get(i).getHealth());
+                    charTable.append(", Status: ");
+                    charTable.append(Main.lightSide.get(i).getStatus());
+                    charTable.append(Colors.ANSI_RESET);
+                    charTable.append("    ");
+
+//                    charTable.append(Colors.ANSI_RED +
+//                            Main.lightSide.get(i).getName() + " HP: " + Main.lightSide.get(i).getHealth() + ", Status: " + Main.lightSide.get(i).getStatus()
+//                            + Colors.ANSI_RESET + "    ");
                 }
                 else {
-                    str = Colors.ANSI_BLUE + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
-                    charTable.append(Colors.ANSI_BLUE +
-                            Main.lightSide.get(i).getName() + " HP: " + Main.lightSide.get(i).getHealth() + ", Status: " + Main.lightSide.get(i).getStatus()
-                            + Colors.ANSI_RESET + "    ");
+                    gchar.delete(0,2);
+                    gchar.append(Colors.ANSI_BLUE);
+                    gchar.append(Main.lightSide.get(i).getName(), 0, 2);
+                    gchar.append(Colors.ANSI_RESET);
+//                    str = Colors.ANSI_BLUE + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
+
+                    charTable.append(Colors.ANSI_BLUE);
+                    charTable.append(Main.lightSide.get(i).getName());
+                    charTable.append(" HP: ");
+                    charTable.append(Main.lightSide.get(i).getHealth());
+                    charTable.append(", Status: ");
+                    charTable.append(Main.lightSide.get(i).getStatus());
+                    charTable.append(Colors.ANSI_RESET);
+                    charTable.append("    ");
                 }
             }
             if (Main.darkSide.get(i).position.isSame(new Coordinates(x, y))) {
                 if (Main.darkSide.get(i).getStatus().equals("dead")) {
-                    str = Colors.ANSI_RED + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
-                    charTable.append(Colors.ANSI_RED +
-                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
-                            + Colors.ANSI_RESET + "    ");
+
+                    gchar.delete(0,2);
+                    gchar.append(Colors.ANSI_RED);
+                    gchar.append(Main.darkSide.get(i).getName(), 0, 2);
+                    gchar.append(Colors.ANSI_RESET);
+
+//                    str = Colors.ANSI_RED + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
+//                    charTable.append(Colors.ANSI_RED +
+//                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
+//                            + Colors.ANSI_RESET + "    ");
                 }
                 else {
-                    str = Colors.ANSI_GREEN + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
-                    charTable.append(Colors.ANSI_GREEN +
-                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
-                            + Colors.ANSI_RESET + "    ");
+                    gchar.delete(0,2);
+                    gchar.append(Colors.ANSI_GREEN);
+                    gchar.append(Main.darkSide.get(i).getName(), 0, 2);
+                    gchar.append(Colors.ANSI_RESET);
+
+                    charTable.append(Colors.ANSI_GREEN);
+                    charTable.append(Main.darkSide.get(i).getName());
+                    charTable.append(" HP: ");
+                    charTable.append(Main.darkSide.get(i).getHealth());
+                    charTable.append(", Status: ");
+                    charTable.append(Main.darkSide.get(i).getStatus());
+                    charTable.append(Colors.ANSI_RESET);
+                    charTable.append("    ");
+
+//                    str = Colors.ANSI_GREEN + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
+//                    charTable.append(Colors.ANSI_GREEN +
+//                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
+//                            + Colors.ANSI_RESET + "    ");
                 }
             }
         }
-        return str;
+        return gchar;
+//        return str;
     }
 
     public static String getCharFull (int x) {
@@ -74,7 +146,7 @@ public class ConsoleView {
         for (int y = 1; y < Main.FIELD_SIZE; y++) {
             s.append(String.format("\u2502%s", ConsoleView.getChar(x, y)));
         }
-        s.append(String.format("\u2502    %s", charTable));
+        s.append(String.format("\u2502    %s\n", charTable));
         charTable.delete(0, charTable.length());
         return s.toString();
     }
