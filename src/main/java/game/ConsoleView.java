@@ -5,10 +5,10 @@ import game.chars.Coordinates;
 import java.util.Collections;
 
 public class ConsoleView {
-    public static StringBuilder field() { //по сути я могла бы обращаться напрямую к полям в Main вместо параметров. Хотя подсветка конечно это приятно
-        //Завести здесь один-два трингбилдера вместо прямого обращения к консоли
-        StringBuilder field = new StringBuilder();
-        if (Main.step == 0) {
+    private static StringBuilder field = new StringBuilder();
+    public static StringBuilder field() {
+
+        if (Main.step == 1) {
             field.append(Colors.ANSI_RED);
             field.append("First step!");
             field.append(Colors.ANSI_RESET);
@@ -35,7 +35,7 @@ public class ConsoleView {
 
         // Середина игровое поле
         for (int i = 1; i < Main.FIELD_SIZE; i++) {
-            field.append(ConsoleView.getCharFull(i));
+            ConsoleView.getCharFull(i);
             field.append("\u251c");
             field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")));
             field.append("\u2500\u2500\u2524\n");
@@ -45,11 +45,11 @@ public class ConsoleView {
         }
 
         // Низ игровое поле
-        field.append(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
+        ConsoleView.getCharFull(Main.FIELD_SIZE-1);
         field.append("\u2514");
         field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")));
         field.append("\u2500\u2500\u2518\n");
-        field.append("Press ENTER to continue. Press Q to exit");
+        field.append("Press ENTER to continue. Press Q to exit\n");
 
         return field;
 //        System.out.println(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
@@ -59,16 +59,16 @@ public class ConsoleView {
     }
 
     private static StringBuilder charTable = new StringBuilder();
-    private static StringBuilder getChar(int x, int y) {
-        StringBuilder gchar = new StringBuilder("  ");
+
+    private static void getChar(int x, int y) {
 //        String str = "  ";
         for (int i = 0; i < Main.TEAM_SIZE; i++) {
             if (Main.lightSide.get(i).position.isSame(new Coordinates(x, y))) {
                 if (Main.lightSide.get(i).getStatus().equals("dead")) {
-                    gchar.delete(0,2);
-                    gchar.append(Colors.ANSI_RED);
-                    gchar.append(Main.lightSide.get(i).getName(), 0, 2);
-                    gchar.append(Colors.ANSI_RESET);
+
+                    field.append(Colors.ANSI_RED);
+                    field.append(Main.lightSide.get(i).getName(), 0, 2);
+                    field.append(Colors.ANSI_RESET);
 //                    str = Colors.ANSI_RED + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 
                     charTable.append(Colors.ANSI_RED);
@@ -80,15 +80,16 @@ public class ConsoleView {
                     charTable.append(Colors.ANSI_RESET);
                     charTable.append("    ");
 
+                    return;
 //                    charTable.append(Colors.ANSI_RED +
 //                            Main.lightSide.get(i).getName() + " HP: " + Main.lightSide.get(i).getHealth() + ", Status: " + Main.lightSide.get(i).getStatus()
 //                            + Colors.ANSI_RESET + "    ");
                 }
                 else {
-                    gchar.delete(0,2);
-                    gchar.append(Colors.ANSI_BLUE);
-                    gchar.append(Main.lightSide.get(i).getName(), 0, 2);
-                    gchar.append(Colors.ANSI_RESET);
+
+                    field.append(Colors.ANSI_BLUE);
+                    field.append(Main.lightSide.get(i).getName(), 0, 2);
+                    field.append(Colors.ANSI_RESET);
 //                    str = Colors.ANSI_BLUE + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 
                     charTable.append(Colors.ANSI_BLUE);
@@ -99,26 +100,26 @@ public class ConsoleView {
                     charTable.append(Main.lightSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     charTable.append("    ");
+                    return;
                 }
             }
             if (Main.darkSide.get(i).position.isSame(new Coordinates(x, y))) {
                 if (Main.darkSide.get(i).getStatus().equals("dead")) {
 
-                    gchar.delete(0,2);
-                    gchar.append(Colors.ANSI_RED);
-                    gchar.append(Main.darkSide.get(i).getName(), 0, 2);
-                    gchar.append(Colors.ANSI_RESET);
-
+                    field.append(Colors.ANSI_RED);
+                    field.append(Main.darkSide.get(i).getName(), 0, 2);
+                    field.append(Colors.ANSI_RESET);
+                    return;
 //                    str = Colors.ANSI_RED + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 //                    charTable.append(Colors.ANSI_RED +
 //                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
 //                            + Colors.ANSI_RESET + "    ");
                 }
                 else {
-                    gchar.delete(0,2);
-                    gchar.append(Colors.ANSI_GREEN);
-                    gchar.append(Main.darkSide.get(i).getName(), 0, 2);
-                    gchar.append(Colors.ANSI_RESET);
+
+                    field.append(Colors.ANSI_GREEN);
+                    field.append(Main.darkSide.get(i).getName(), 0, 2);
+                    field.append(Colors.ANSI_RESET);
 
                     charTable.append(Colors.ANSI_GREEN);
                     charTable.append(Main.darkSide.get(i).getName());
@@ -128,6 +129,7 @@ public class ConsoleView {
                     charTable.append(Main.darkSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     charTable.append("    ");
+                    return;
 
 //                    str = Colors.ANSI_GREEN + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 //                    charTable.append(Colors.ANSI_GREEN +
@@ -136,19 +138,19 @@ public class ConsoleView {
                 }
             }
         }
-        return gchar;
+        field.append("  ");
 //        return str;
     }
 
-    public static String getCharFull (int x) {
-        StringBuilder s = new StringBuilder();
-        s.append(String.format("\u2502%s", ConsoleView.getChar(x, 0)));
+    public static void getCharFull (int x) {
+        field.append("\u2502");
+        ConsoleView.getChar(x, 0);
         for (int y = 1; y < Main.FIELD_SIZE; y++) {
-            s.append(String.format("\u2502%s", ConsoleView.getChar(x, y)));
+            field.append("\u2502");
+            ConsoleView.getChar(x, y);
         }
-        s.append(String.format("\u2502    %s\n", charTable));
+        field.append(String.format("\u2502    %s\n", charTable));
         charTable.delete(0, charTable.length());
-        return s.toString();
     }
 }
 

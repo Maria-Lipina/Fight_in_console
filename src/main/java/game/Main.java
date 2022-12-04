@@ -10,7 +10,7 @@ public class Main {
     public static final int TEAM_SIZE = 2; //так с каждой стороны по одному игроку
     public static final int FIELD_SIZE = 10;
 
-    public static int step = 0;
+    public static int step = 1;
     static ArrayList<BaseHero> lightSide;
     static ArrayList<BaseHero> darkSide;
 
@@ -29,8 +29,6 @@ public class Main {
             step++;
 
         } while ((char) System.in.read() != 'Q');
-
-        System.out.println((int)Math.sqrt(2));
 
 
     }

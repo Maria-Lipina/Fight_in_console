@@ -9,7 +9,7 @@ public class Turn {
 
     public static void orderBySpeed() {
 
-        if (Main.step == 0) {
+        if (Main.step == 1) {
             Team.sortBySpeed(Main.lightSide);
             Team.sortBySpeed(Main.darkSide);
         } else {
