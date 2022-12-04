@@ -1,5 +1,4 @@
 package game.chars;
-import game.Main;
 
 import java.util.ArrayList;
 
@@ -16,7 +15,10 @@ public class Spearman extends BaseHero {
     public void step(ArrayList<BaseHero> enemy) {
         if (status.equals("dead")) return;
         BaseHero target = position.findNearest(enemy);
-        if (position.distance(target.position) == (int) Math.sqrt(2)) {target.damage(damage[1]); return;}
+        if (position.distance(target.position) <= (int) Math.sqrt(2)) {
+            target.damage(damage[1]);
+            return;
+        }
         if (target.position.x < position.x && position.isValid(new Coordinates(--position.x, position.y), myParty)) {
             --position.x;
             return;

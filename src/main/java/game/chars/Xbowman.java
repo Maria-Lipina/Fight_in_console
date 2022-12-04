@@ -32,9 +32,9 @@ public class Xbowman extends BaseHero {
         if (shoot<1) {status = "used"; return;}
         BaseHero target = position.findNearest(enemy);
         double dist = position.distance(target.position);
-        target.damage(dist < speed ?
+        target.damage((dist < speed ?
                 super.damageValue(target) :
-                (super.damageValue(target)/2));
+                (super.damageValue(target)/2)));
         shoot--;
     }
 }

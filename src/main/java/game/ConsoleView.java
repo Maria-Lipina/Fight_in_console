@@ -13,7 +13,6 @@ public class ConsoleView {
             field.append("First step!");
             field.append(Colors.ANSI_RESET);
             field.append("\n");
-//            System.out.println(Colors.ANSI_RED+"First step!"+Colors.ANSI_RESET);
         }
         else {
             field.append(Colors.ANSI_RED);
@@ -21,27 +20,19 @@ public class ConsoleView {
             field.append(Main.step);
             field.append(Colors.ANSI_RESET);
             field.append("\n");
-//            System.out.println(Colors.ANSI_RED + "Step: "+Main.step+Colors.ANSI_RESET);
         }
-
 
         // Верх игровое поле
         field.append("\u250c");
         field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")));
         field.append("\u2500\u2500\u2510\n");
 
-//        System.out.println(
-//                "\u250c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
-
         // Середина игровое поле
-        for (int i = 1; i < Main.FIELD_SIZE; i++) {
+        for (int i = 0; i < Main.FIELD_SIZE; i++) {
             ConsoleView.getCharFull(i);
             field.append("\u251c");
             field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")));
             field.append("\u2500\u2500\u2524\n");
-//            System.out.println(ConsoleView.getCharFull(i));
-//            System.out.println(
-//                    "\u251c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")) + "\u2500\u2500\u2524");
         }
 
         // Низ игровое поле
@@ -52,24 +43,18 @@ public class ConsoleView {
         field.append("Press ENTER to continue. Press Q to exit\n");
 
         return field;
-//        System.out.println(ConsoleView.getCharFull(Main.FIELD_SIZE-1));
-//        System.out.println(
-//                "\u2514" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")) + "\u2500\u2500\u2518");
-//        System.out.println("Press ENTER to continue. Press Q to exit");return
     }
 
     private static StringBuilder charTable = new StringBuilder();
 
     private static void getChar(int x, int y) {
-//        String str = "  ";
-        for (int i = 0; i < Main.TEAM_SIZE; i++) {
-            if (Main.lightSide.get(i).position.isSame(new Coordinates(x, y))) {
-                if (Main.lightSide.get(i).getStatus().equals("dead")) {
 
+        for (int i = 0; i < Main.TEAM_SIZE; i++) {
+            if (Main.lightSide.get(i).getPosition().isSame(new Coordinates(x, y))) {
+                if (Main.lightSide.get(i).getStatus().equals("dead")) {
                     field.append(Colors.ANSI_RED);
                     field.append(Main.lightSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
-//                    str = Colors.ANSI_RED + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 
                     charTable.append(Colors.ANSI_RED);
                     charTable.append(Main.lightSide.get(i).getName());
@@ -79,14 +64,10 @@ public class ConsoleView {
                     charTable.append(Main.lightSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     charTable.append("    ");
-
                     return;
-//                    charTable.append(Colors.ANSI_RED +
-//                            Main.lightSide.get(i).getName() + " HP: " + Main.lightSide.get(i).getHealth() + ", Status: " + Main.lightSide.get(i).getStatus()
-//                            + Colors.ANSI_RESET + "    ");
+
                 }
                 else {
-
                     field.append(Colors.ANSI_BLUE);
                     field.append(Main.lightSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
@@ -103,20 +84,23 @@ public class ConsoleView {
                     return;
                 }
             }
-            if (Main.darkSide.get(i).position.isSame(new Coordinates(x, y))) {
+            if (Main.darkSide.get(i).getPosition().isSame(new Coordinates(x, y))) {
                 if (Main.darkSide.get(i).getStatus().equals("dead")) {
-
                     field.append(Colors.ANSI_RED);
                     field.append(Main.darkSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
+
+                    charTable.append(Colors.ANSI_RED);
+                    charTable.append(Main.darkSide.get(i).getName());
+                    charTable.append(" HP: ");
+                    charTable.append(Main.darkSide.get(i).getHealth());
+                    charTable.append(", Status: ");
+                    charTable.append(Main.darkSide.get(i).getStatus());
+                    charTable.append(Colors.ANSI_RESET);
+                    charTable.append("    ");
                     return;
-//                    str = Colors.ANSI_RED + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
-//                    charTable.append(Colors.ANSI_RED +
-//                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
-//                            + Colors.ANSI_RESET + "    ");
                 }
                 else {
-
                     field.append(Colors.ANSI_GREEN);
                     field.append(Main.darkSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
@@ -130,16 +114,10 @@ public class ConsoleView {
                     charTable.append(Colors.ANSI_RESET);
                     charTable.append("    ");
                     return;
-
-//                    str = Colors.ANSI_GREEN + Main.darkSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
-//                    charTable.append(Colors.ANSI_GREEN +
-//                            Main.darkSide.get(i).getName() + " HP: " + Main.darkSide.get(i).getHealth() + ", Status: " + Main.darkSide.get(i).getStatus()
-//                            + Colors.ANSI_RESET + "    ");
                 }
             }
         }
         field.append("  ");
-//        return str;
     }
 
     public static void getCharFull (int x) {
