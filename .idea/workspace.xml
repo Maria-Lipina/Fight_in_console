@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="исправила расчет расстояния между персонажами. Ура, теперь рукопашные дамагеры ходят правильно">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="изменила конкатенацию строк &quot;+&quot; на стрингбилдеры. В консоль печатается что-то лишнее">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Turn.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,21 +77,7 @@
       <option name="project" value="LOCAL" />
       <updated>1670103290013</updated>
     </task>
-    <task id="LOCAL-00005" summary="изменила итератор в цикле ходов и исправила отображение информации о персонажах в консоли">
-      <created>1670182806357</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1670182806357</updated>
-    </task>
-    <task id="LOCAL-00006" summary="исправила расчет расстояния между персонажами. Ура, теперь рукопашные дамагеры ходят правильно">
-      <created>1670185152910</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1670185152910</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,8 +98,6 @@
     <MESSAGE value="перенесла код из старого репозитория-форка" />
     <MESSAGE value="переопределила модификаторы доступа в BaseHero под protected, сменила где можно геттеры на прямое обращение (потому что геттер ради геттера, а код стал намного короче и лаконичнее)&#10;сменила порядок вызова ходов и распечатывания поля" />
     <MESSAGE value="изменила конкатенацию строк &quot;+&quot; на стрингбилдеры. В консоль печатается что-то лишнее" />
-    <MESSAGE value="изменила итератор в цикле ходов и исправила отображение информации о персонажах в консоли" />
-    <MESSAGE value="исправила расчет расстояния между персонажами. Ура, теперь рукопашные дамагеры ходят правильно" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправила расчет расстояния между персонажами. Ура, теперь рукопашные дамагеры ходят правильно" />
+    <option name="LAST_COMMIT_MESSAGE" value="изменила конкатенацию строк &quot;+&quot; на стрингбилдеры. В консоль печатается что-то лишнее" />
   </component>
 </project>
