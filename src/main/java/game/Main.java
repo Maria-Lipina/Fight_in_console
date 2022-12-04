@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class Main {
 
-    public static final int TEAM_SIZE = 2; //так с каждой стороны по одному игроку
+    public static final int TEAM_SIZE = 1;
     public static final int FIELD_SIZE = 10;
 
     public static int step = 1;
@@ -27,6 +27,10 @@ public class Main {
             Turn.orderBySpeed();
             System.out.println(ConsoleView.field());
             step++;
+            System.out.println("lightSide" + Main.lightSide.get(0).position.toString() + " "
+                    + Main.lightSide.get(0).position.distance(Main.darkSide.get(0).position));
+            System.out.println("darkSide" + Main.darkSide.get(0).position.toString() + " "
+                    + Main.darkSide.get(0).position.distance(Main.lightSide.get(0).position));
 
         } while ((char) System.in.read() != 'Q');
 

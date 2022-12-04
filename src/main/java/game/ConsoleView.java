@@ -34,7 +34,7 @@ public class ConsoleView {
 //                "\u250c" + String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")) + "\u2500\u2500\u2510");
 
         // Середина игровое поле
-        for (int i = 1; i < Main.FIELD_SIZE; i++) {
+        for (int i = 0; i < Main.FIELD_SIZE; i++) {
             ConsoleView.getCharFull(i);
             field.append("\u251c");
             field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")));

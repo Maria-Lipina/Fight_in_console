@@ -1,5 +1,6 @@
 package game.chars;
-
+import static java.lang.Math.pow;
+import static java.lang.Math.sqrt;
 import game.Main;
 
 import java.util.ArrayList;
@@ -16,8 +17,8 @@ public class Coordinates { //Protected class, потому что клиенту
         return this.x == pos.x && this.y == pos.y;
     }
 
-    public double distance(Coordinates pos) {
-        return Math.sqrt(((pos.x - this.x)^2 + (pos.y - this.y^2)));
+    public int distance(Coordinates pos) {
+        return (int) sqrt(pow((pos.x - this.x), 2) + pow((pos.y - this.y), 2));
     }
     //здесь достаточно int
 
@@ -40,6 +41,14 @@ public class Coordinates { //Protected class, потому что клиенту
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Coordinates{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }
 
