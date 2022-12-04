@@ -56,6 +56,7 @@ public class ConsoleView {
                     field.append(Main.lightSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
+                    charTable.append("    ");
                     charTable.append(Colors.ANSI_RED);
                     charTable.append(Main.lightSide.get(i).getName());
                     charTable.append(" HP: ");
@@ -63,7 +64,6 @@ public class ConsoleView {
                     charTable.append(", Status: ");
                     charTable.append(Main.lightSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
-                    charTable.append("    ");
                     return;
 
                 }
@@ -71,8 +71,8 @@ public class ConsoleView {
                     field.append(Colors.ANSI_BLUE);
                     field.append(Main.lightSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
-//                    str = Colors.ANSI_BLUE + Main.lightSide.get(i).getName().substring(0, 2) + Colors.ANSI_RESET;
 
+                    charTable.append("    ");
                     charTable.append(Colors.ANSI_BLUE);
                     charTable.append(Main.lightSide.get(i).getName());
                     charTable.append(" HP: ");
@@ -80,7 +80,6 @@ public class ConsoleView {
                     charTable.append(", Status: ");
                     charTable.append(Main.lightSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
-                    charTable.append("    ");
                     return;
                 }
             }
@@ -90,6 +89,7 @@ public class ConsoleView {
                     field.append(Main.darkSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
+                    charTable.append("    ");
                     charTable.append(Colors.ANSI_RED);
                     charTable.append(Main.darkSide.get(i).getName());
                     charTable.append(" HP: ");
@@ -97,7 +97,6 @@ public class ConsoleView {
                     charTable.append(", Status: ");
                     charTable.append(Main.darkSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
-                    charTable.append("    ");
                     return;
                 }
                 else {
@@ -105,6 +104,7 @@ public class ConsoleView {
                     field.append(Main.darkSide.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
+                    charTable.append("    ");
                     charTable.append(Colors.ANSI_GREEN);
                     charTable.append(Main.darkSide.get(i).getName());
                     charTable.append(" HP: ");
@@ -112,7 +112,6 @@ public class ConsoleView {
                     charTable.append(", Status: ");
                     charTable.append(Main.darkSide.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
-                    charTable.append("    ");
                     return;
                 }
             }
@@ -127,7 +126,7 @@ public class ConsoleView {
             field.append("\u2502");
             ConsoleView.getChar(x, y);
         }
-        field.append(String.format("\u2502    %s\n", charTable));
+        field.append(String.format("\u2502%s\n", charTable));
         charTable.delete(0, charTable.length());
     }
 }

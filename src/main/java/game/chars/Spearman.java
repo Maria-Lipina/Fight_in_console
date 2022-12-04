@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Spearman extends BaseHero {
     public Spearman(ArrayList<BaseHero> myParty, int x, int y) {
-        super(4, 5,  new int[]{1,3}, 10, 4,  "Spearman", myParty, x, y);
+        super(4, 5,  new int[]{1,3}, 20, 4,  "Spearman", myParty, x, y);
     }
 
     public Spearman(int attack, int protection, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y) {

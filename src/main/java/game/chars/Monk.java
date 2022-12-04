@@ -28,6 +28,5 @@ public class Monk extends BaseHero {
         }
         myParty.get(mostDamagedInd).damage(damage[0]);
         myParty.get(mostDamagedInd).status = "stand";
-        //Уже хотя бы из-за нее нужно добавить логгер
     }
 }

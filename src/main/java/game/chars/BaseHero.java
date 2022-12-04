@@ -8,12 +8,12 @@ public abstract class BaseHero implements BaseInterface, Iterator {
     protected int attack;
     protected int defense;
     protected int[] damage;
-    protected int health; //damageValue при этом интовая, учитывая, что здесь всегда +-, то есть double не нужен
+    protected int health;
     protected int maxHealth;
     protected int speed;
     protected String name;
     protected ArrayList<BaseHero> myParty;
-    public Coordinates position; //так, чтобы оно могло быть protected. Пользователь не должен видеть
+    protected Coordinates position;
     protected String status;
     //Для логгера добавить поле id и idGetCount
 
@@ -39,6 +39,10 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return status;
     }
 
+    public Coordinates getPosition() {
+        return position;
+    }
+
     @Override
     public String getInfo() {
         return "name=" + name +
@@ -49,7 +53,6 @@ public abstract class BaseHero implements BaseInterface, Iterator {
                 ", speed=" + speed;
     }
 
-    //Для тренировки
     private int classFields;
 
     @Override
@@ -84,7 +87,7 @@ public abstract class BaseHero implements BaseInterface, Iterator {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemy) { //обращаться к этому полю, а не плодить аргументы
+    public void step(ArrayList<BaseHero> enemy) {
     }
 
     protected void damage(int damage) {
