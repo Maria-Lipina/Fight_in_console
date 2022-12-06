@@ -1,5 +1,8 @@
 package game.chars;
 
+import game.Main;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -15,9 +18,14 @@ public abstract class BaseHero implements BaseInterface, Iterator {
     protected ArrayList<BaseHero> myParty;
     protected Coordinates position;
     protected String status;
-    //Для логгера добавить поле id и idGetCount
 
-    public BaseHero(int attack, int defense, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y) {
+    protected String side;
+
+    private static int idCount = 0;
+
+    protected int id;
+
+    public BaseHero(int attack, int defense, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y, String side) {
         this.attack = attack;
         this.defense = defense;
         this.damage = damage;
@@ -28,12 +36,18 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         this.myParty = myParty;
         this.position = new Coordinates(x, y);
         this.status = "stand";
+        this.id = idCount++;
+        this.side = side;
     }
     /* Шпаргалка по имеющимся статусам
      * stand - для всех. Жив и готов сражаться. По сути аналогичен статусу alive
      * used - для крестьян, что они свою стрелу подали. Или для стрелков, что у них боеприпас закончился, а здоровье ещё нет
      * dead - умер. Здоровье = или меньше 0
      * */
+
+    public int getId() {
+        return id;
+    }
 
     public String getStatus() {
         return status;
@@ -87,7 +101,13 @@ public abstract class BaseHero implements BaseInterface, Iterator {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemy) {
+    public void step(ArrayList<BaseHero> enemy) {}
+
+    @Override
+    public void logIt(BaseHero target, int damageValue) {
+        Main.lg.add(
+                new String[] {Integer.toString(Main.step), side, name+id, target.name+target.id, Integer.toString(damageValue)}
+        );
     }
 
     protected void damage(int damage) {

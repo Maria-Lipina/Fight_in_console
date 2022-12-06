@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Xbowman extends BaseHero {
     private int shoot;
-    public Xbowman(ArrayList<BaseHero> myParty, int x, int y) {
-        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", myParty, x, y);
+    public Xbowman(ArrayList<BaseHero> myParty, int x, int y, String side) {
+        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", myParty, x, y, side);
         this.shoot = 16;
     }
-    public Xbowman(int attack, int protection, int[] damage, int health, int speed, String name, int shoot, ArrayList<BaseHero> myParty, int x, int y) {
-        super(attack, protection, damage, health, speed, name, myParty, x, y);
+    public Xbowman(int attack, int protection, int[] damage, int health, int speed, String name, int shoot, ArrayList<BaseHero> myParty, int x, int y, String side) {
+        super(attack, protection, damage, health, speed, name, myParty, x, y, side);
         this.shoot = shoot;
     }
 
@@ -32,10 +32,13 @@ public class Xbowman extends BaseHero {
         if (shoot<1) {status = "used"; return;}
         BaseHero target = position.findNearest(enemy);
         double dist = position.distance(target.position);
-        target.damage((dist < speed ?
+        int damageValue = (dist < speed ?
                 super.damageValue(target) :
-                (super.damageValue(target)/2)));
+                (super.damageValue(target)/2));
+        target.damage(damageValue);
         shoot--;
+
+        super.logIt(target, damageValue);
     }
 }
 

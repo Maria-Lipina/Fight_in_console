@@ -1,19 +1,21 @@
 package game.chars;
 
+import game.Main;
+
 import java.util.ArrayList;
 
 public class Monk extends BaseHero {
 
-    public Monk(ArrayList<BaseHero> myParty, int x, int y) {
-        super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", myParty, x, y);
+    public Monk(ArrayList<BaseHero> myParty, int x, int y, String side) {
+        super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", myParty, x, y, side);
     }
 
-    public Monk(int attack, int protection, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y) {
-        super(attack, protection, damage, health, speed, name, myParty, x, y);
+    public Monk(int attack, int protection, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y, String side) {
+        super(attack, protection, damage, health, speed, name, myParty, x, y, side);
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemy) {
+    public void step(ArrayList<BaseHero> enemy) { //все равно все переписывать
         if (status.equals("dead")) return;
         double mostDamaged = myParty.get(0).maxHealth -
                 myParty.get(0).health;
@@ -28,5 +30,7 @@ public class Monk extends BaseHero {
         }
         myParty.get(mostDamagedInd).damage(damage[0]);
         myParty.get(mostDamagedInd).status = "stand";
+        super.logIt(myParty.get(mostDamagedInd), damage[0]);
     }
+
 }
