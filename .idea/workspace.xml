@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="исправила расчет расстояния между персонажами. Ура, теперь все ходят правильно и наносят урон. Удалила лишние комментарии в коде">
-      <change afterPath="$PROJECT_DIR$/log.csv" afterDir="false" />
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила к игре небольшой логгер, кто кого насколько сильно">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/log.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Turn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +44,26 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IT\Java\Fight in console" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="game.Main" />
+      <module name="Fight in console" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -102,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670256289971</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Добавила к игре небольшой логгер, кто кого насколько сильно">
+      <created>1670330891876</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1670330891877</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +145,7 @@
     <MESSAGE value="переопределила модификаторы доступа в BaseHero под protected, сменила где можно геттеры на прямое обращение (потому что геттер ради геттера, а код стал намного короче и лаконичнее)&#10;сменила порядок вызова ходов и распечатывания поля" />
     <MESSAGE value="изменила конкатенацию строк &quot;+&quot; на стрингбилдеры. В консоль печатается что-то лишнее" />
     <MESSAGE value="исправила расчет расстояния между персонажами. Ура, теперь все ходят правильно и наносят урон. Удалила лишние комментарии в коде" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправила расчет расстояния между персонажами. Ура, теперь все ходят правильно и наносят урон. Удалила лишние комментарии в коде" />
+    <MESSAGE value="Добавила к игре небольшой логгер, кто кого насколько сильно" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила к игре небольшой логгер, кто кого насколько сильно" />
   </component>
 </project>

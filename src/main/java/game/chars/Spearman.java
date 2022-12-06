@@ -13,7 +13,10 @@ public class Spearman extends BaseHero {
 
     @Override
     public void step(ArrayList<BaseHero> enemy) {
-        if (status.equals("dead")) return;
+        if (status.equals("dead")) {
+            super.logIt(this, 0);
+            return;
+        }
         BaseHero target = position.findNearest(enemy);
         if (position.distance(target.position) <= (int) Math.sqrt(2)) {
             int damageValue = super.damageValue(target);

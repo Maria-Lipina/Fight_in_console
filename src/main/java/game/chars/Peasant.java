@@ -11,5 +11,6 @@ public class Peasant extends BaseHero {
     public void step(ArrayList<BaseHero> party) {
         if (status.equals("dead")) return;
         if (status.equals("used")) status = "stand";
+        super.logIt(this, 0);
     }
 }
