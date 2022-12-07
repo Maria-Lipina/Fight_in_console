@@ -8,5 +8,5 @@ public interface BaseInterface {
     void step(ArrayList<BaseHero> enemy);
 
     //"Step No", "Side", "Hero+ID", "Target", "Damage val"
-    void logIt(BaseHero target, int damageValue);
+//    void logIt(BaseHero target, int damageValue);
 }

@@ -1,680 +1,121 @@
 Step No;Side;Hero+ID;Target;Damage val
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-7;Light;Sniper0;Spearman18;10
-7;Light;Warlock3;Robber9;-5
-7;Light;Robber2;Spearman12;4
-7;Light;Robber4;Spearman12;4
-7;Light;Robber5;Spearman12;4
-7;Dark;Monk13;Spearman12;-4
-7;Dark;Monk16;Spearman18;-4
-7;Dark;Monk19;Spearman12;-4
-7;Dark;Xbowman11;Robber9;1
-7;Dark;Spearman12;Robber9;3
-7;Dark;Xbowman17;Robber9;1
-7;Dark;Spearman18;Robber9;3
-7;Dark;Peasant10;Peasant10;0
-7;Dark;Peasant14;Peasant14;0
-7;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-7;Light;Sniper0;Spearman18;10
-7;Light;Warlock3;Robber9;-5
-7;Light;Robber2;Spearman12;4
-7;Light;Robber4;Spearman12;4
-7;Light;Robber5;Spearman12;4
-7;Dark;Monk13;Spearman12;-4
-7;Dark;Monk16;Spearman18;-4
-7;Dark;Monk19;Spearman12;-4
-7;Dark;Xbowman11;Robber9;1
-7;Dark;Spearman12;Robber9;3
-7;Dark;Xbowman17;Robber9;1
-7;Dark;Spearman18;Robber9;3
-7;Dark;Peasant10;Peasant10;0
-7;Dark;Peasant14;Peasant14;0
-7;Dark;Peasant15;Peasant15;0
-8;Light;Sniper0;Spearman18;10
-8;Light;Warlock3;Robber9;-5
-8;Light;Robber2;Spearman12;4
-8;Light;Robber4;Spearman12;4
-8;Dark;Monk13;Spearman12;-4
-8;Dark;Monk16;Spearman18;-4
-8;Dark;Monk19;Spearman12;-4
-8;Dark;Xbowman11;Robber9;1
-8;Dark;Xbowman17;Robber9;1
-8;Dark;Peasant10;Peasant10;0
-8;Dark;Peasant14;Peasant14;0
-8;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-7;Light;Sniper0;Spearman18;10
-7;Light;Warlock3;Robber9;-5
-7;Light;Robber2;Spearman12;4
-7;Light;Robber4;Spearman12;4
-7;Light;Robber5;Spearman12;4
-7;Dark;Monk13;Spearman12;-4
-7;Dark;Monk16;Spearman18;-4
-7;Dark;Monk19;Spearman12;-4
-7;Dark;Xbowman11;Robber9;1
-7;Dark;Spearman12;Robber9;3
-7;Dark;Xbowman17;Robber9;1
-7;Dark;Spearman18;Robber9;3
-7;Dark;Peasant10;Peasant10;0
-7;Dark;Peasant14;Peasant14;0
-7;Dark;Peasant15;Peasant15;0
-8;Light;Sniper0;Spearman18;10
-8;Light;Warlock3;Robber9;-5
-8;Light;Robber2;Spearman12;4
-8;Light;Robber4;Spearman12;4
-8;Dark;Monk13;Spearman12;-4
-8;Dark;Monk16;Spearman18;-4
-8;Dark;Monk19;Spearman12;-4
-8;Dark;Xbowman11;Robber9;1
-8;Dark;Xbowman17;Robber9;1
-8;Dark;Peasant10;Peasant10;0
-8;Dark;Peasant14;Peasant14;0
-8;Dark;Peasant15;Peasant15;0
-9;Light;Sniper0;Spearman18;10
-9;Light;Warlock3;Robber9;-5
-9;Light;Robber5;Spearman12;4
-9;Light;Robber6;Spearman12;4
-9;Dark;Monk13;Spearman12;-4
-9;Dark;Monk16;Spearman18;-4
-9;Dark;Monk19;Spearman12;-4
-9;Dark;Xbowman11;Robber9;3
-9;Dark;Xbowman17;Robber9;1
-9;Dark;Peasant10;Peasant10;0
-9;Dark;Peasant14;Peasant14;0
-9;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-7;Light;Sniper0;Spearman18;10
-7;Light;Warlock3;Robber9;-5
-7;Light;Robber2;Spearman12;4
-7;Light;Robber4;Spearman12;4
-7;Light;Robber5;Spearman12;4
-7;Dark;Monk13;Spearman12;-4
-7;Dark;Monk16;Spearman18;-4
-7;Dark;Monk19;Spearman12;-4
-7;Dark;Xbowman11;Robber9;1
-7;Dark;Spearman12;Robber9;3
-7;Dark;Xbowman17;Robber9;1
-7;Dark;Spearman18;Robber9;3
-7;Dark;Peasant10;Peasant10;0
-7;Dark;Peasant14;Peasant14;0
-7;Dark;Peasant15;Peasant15;0
-8;Light;Sniper0;Spearman18;10
-8;Light;Warlock3;Robber9;-5
-8;Light;Robber2;Spearman12;4
-8;Light;Robber4;Spearman12;4
-8;Dark;Monk13;Spearman12;-4
-8;Dark;Monk16;Spearman18;-4
-8;Dark;Monk19;Spearman12;-4
-8;Dark;Xbowman11;Robber9;1
-8;Dark;Xbowman17;Robber9;1
-8;Dark;Peasant10;Peasant10;0
-8;Dark;Peasant14;Peasant14;0
-8;Dark;Peasant15;Peasant15;0
-9;Light;Sniper0;Spearman18;10
-9;Light;Warlock3;Robber9;-5
-9;Light;Robber5;Spearman12;4
-9;Light;Robber6;Spearman12;4
-9;Dark;Monk13;Spearman12;-4
-9;Dark;Monk16;Spearman18;-4
-9;Dark;Monk19;Spearman12;-4
-9;Dark;Xbowman11;Robber9;3
-9;Dark;Xbowman17;Robber9;1
-9;Dark;Peasant10;Peasant10;0
-9;Dark;Peasant14;Peasant14;0
-9;Dark;Peasant15;Peasant15;0
-10;Light;Sniper0;Spearman18;10
-10;Light;Warlock3;Robber9;-5
-10;Light;Robber6;Spearman12;4
-10;Light;Robber7;Spearman12;4
-10;Dark;Monk13;Spearman12;-4
-10;Dark;Monk16;Spearman18;-4
-10;Dark;Monk19;Spearman12;-4
-10;Dark;Xbowman11;Robber9;3
-10;Dark;Spearman12;Robber9;3
-10;Dark;Xbowman17;Robber9;1
-10;Dark;Spearman18;Robber9;3
-10;Dark;Peasant10;Peasant10;0
-10;Dark;Peasant14;Peasant14;0
-10;Dark;Peasant15;Peasant15;0
-2;Light;Sniper0;Monk13;5
-2;Light;Warlock3;Sniper0;-5
-2;Light;Peasant1;Peasant1;0
-2;Light;Peasant8;Peasant8;0
-2;Dark;Monk13;Monk13;-4
-2;Dark;Monk16;Monk13;-4
-2;Dark;Monk19;Monk13;-4
-2;Dark;Xbowman11;Robber6;1
-2;Dark;Xbowman17;Peasant8;1
-2;Dark;Peasant10;Peasant10;0
-2;Dark;Peasant14;Peasant14;0
-2;Dark;Peasant15;Peasant15;0
-3;Light;Sniper0;Spearman12;10
-3;Light;Warlock3;Robber6;-5
-3;Light;Peasant1;Peasant1;0
-3;Dark;Monk13;Spearman12;-4
-3;Dark;Monk16;Spearman12;-4
-3;Dark;Monk19;Spearman12;-4
-3;Dark;Xbowman11;Robber6;1
-3;Dark;Xbowman17;Peasant1;1
-3;Dark;Peasant10;Peasant10;0
-3;Dark;Peasant14;Peasant14;0
-3;Dark;Peasant15;Peasant15;0
-4;Light;Sniper0;Spearman12;10
-4;Light;Warlock3;Robber6;-5
-4;Dark;Monk13;Spearman12;-4
-4;Dark;Monk16;Spearman12;-4
-4;Dark;Monk19;Spearman12;-4
-4;Dark;Xbowman11;Robber9;1
-4;Dark;Xbowman17;Robber9;1
-4;Dark;Peasant10;Peasant10;0
-4;Dark;Peasant14;Peasant14;0
-4;Dark;Peasant15;Peasant15;0
-5;Light;Sniper0;Spearman18;10
-5;Light;Warlock3;Robber9;-5
-5;Dark;Monk13;Spearman18;-4
-5;Dark;Monk16;Spearman18;-4
-5;Dark;Monk19;Spearman18;-4
-5;Dark;Xbowman11;Robber9;1
-5;Dark;Xbowman17;Robber9;1
-5;Dark;Peasant10;Peasant10;0
-5;Dark;Peasant14;Peasant14;0
-5;Dark;Peasant15;Peasant15;0
-6;Light;Sniper0;Spearman18;10
-6;Light;Warlock3;Robber9;-5
-6;Light;Robber2;Spearman18;4
-6;Light;Robber4;Spearman18;4
-6;Light;Robber5;Spearman18;4
-6;Light;Robber6;Spearman12;4
-6;Light;Robber7;Spearman12;4
-6;Light;Robber9;Spearman12;4
-6;Dark;Monk13;Spearman18;-4
-6;Dark;Monk16;Spearman18;-4
-6;Dark;Monk19;Spearman12;-4
-6;Dark;Xbowman11;Robber9;1
-6;Dark;Spearman12;Robber9;3
-6;Dark;Xbowman17;Robber9;1
-6;Dark;Spearman18;Robber9;3
-6;Dark;Peasant10;Peasant10;0
-6;Dark;Peasant14;Peasant14;0
-6;Dark;Peasant15;Peasant15;0
-7;Light;Sniper0;Spearman18;10
-7;Light;Warlock3;Robber9;-5
-7;Light;Robber2;Spearman12;4
-7;Light;Robber4;Spearman12;4
-7;Light;Robber5;Spearman12;4
-7;Dark;Monk13;Spearman12;-4
-7;Dark;Monk16;Spearman18;-4
-7;Dark;Monk19;Spearman12;-4
-7;Dark;Xbowman11;Robber9;1
-7;Dark;Spearman12;Robber9;3
-7;Dark;Xbowman17;Robber9;1
-7;Dark;Spearman18;Robber9;3
-7;Dark;Peasant10;Peasant10;0
-7;Dark;Peasant14;Peasant14;0
-7;Dark;Peasant15;Peasant15;0
-8;Light;Sniper0;Spearman18;10
-8;Light;Warlock3;Robber9;-5
-8;Light;Robber2;Spearman12;4
-8;Light;Robber4;Spearman12;4
-8;Dark;Monk13;Spearman12;-4
-8;Dark;Monk16;Spearman18;-4
-8;Dark;Monk19;Spearman12;-4
-8;Dark;Xbowman11;Robber9;1
-8;Dark;Xbowman17;Robber9;1
-8;Dark;Peasant10;Peasant10;0
-8;Dark;Peasant14;Peasant14;0
-8;Dark;Peasant15;Peasant15;0
-9;Light;Sniper0;Spearman18;10
-9;Light;Warlock3;Robber9;-5
-9;Light;Robber5;Spearman12;4
-9;Light;Robber6;Spearman12;4
-9;Dark;Monk13;Spearman12;-4
-9;Dark;Monk16;Spearman18;-4
-9;Dark;Monk19;Spearman12;-4
-9;Dark;Xbowman11;Robber9;3
-9;Dark;Xbowman17;Robber9;1
-9;Dark;Peasant10;Peasant10;0
-9;Dark;Peasant14;Peasant14;0
-9;Dark;Peasant15;Peasant15;0
-10;Light;Sniper0;Spearman18;10
-10;Light;Warlock3;Robber9;-5
-10;Light;Robber6;Spearman12;4
-10;Light;Robber7;Spearman12;4
-10;Dark;Monk13;Spearman12;-4
-10;Dark;Monk16;Spearman18;-4
-10;Dark;Monk19;Spearman12;-4
-10;Dark;Xbowman11;Robber9;3
-10;Dark;Spearman12;Robber9;3
-10;Dark;Xbowman17;Robber9;1
-10;Dark;Spearman18;Robber9;3
-10;Dark;Peasant10;Peasant10;0
-10;Dark;Peasant14;Peasant14;0
-10;Dark;Peasant15;Peasant15;0
-11;Light;Sniper0;Spearman18;10
-11;Light;Warlock3;Robber9;-5
-11;Light;Robber2;Spearman12;4
-11;Light;Robber4;Spearman12;4
-11;Light;Robber9;Monk13;4
-11;Dark;Monk13;Spearman12;-4
-11;Dark;Monk16;Spearman18;-4
-11;Dark;Monk19;Spearman12;-4
-11;Dark;Xbowman11;Robber9;3
-11;Dark;Spearman12;Robber9;3
-11;Dark;Xbowman17;Robber9;1
-11;Dark;Spearman18;Robber9;3
-11;Dark;Peasant10;Peasant10;0
-11;Dark;Peasant14;Peasant14;0
-11;Dark;Peasant15;Peasant15;0
+2;Light;Sniper0;Coordinates{x=0, y=0}
+2;Light;Sniper2;Coordinates{x=2, y=0}
+2;Light;Warlock3;Coordinates{x=3, y=0}
+2;Light;Sniper5;Coordinates{x=5, y=0}
+2;Light;Warlock7;Coordinates{x=7, y=0}
+2;Light;Warlock9;Coordinates{x=9, y=0}
+2;Light;Robber1;Coordinates{x=0, y=1}
+2;Light;Robber6;Coordinates{x=7, y=1}
+2;Dark;Monk13;Coordinates{x=3, y=9}
+2;Dark;Xbowman10;Coordinates{x=0, y=9}
+2;Dark;Spearman14;Coordinates{x=5, y=8}
+2;Dark;Spearman17;Coordinates{x=8, y=8}
+2;Dark;Spearman19;Coordinates{x=9, y=8}
+2;Light;Peasant4;Coordinates{x=4, y=0}
+2;Light;Peasant8;Coordinates{x=8, y=0}
+2;Dark;Peasant11;Coordinates{x=1, y=9}
+2;Dark;Peasant12;Coordinates{x=2, y=9}
+2;Dark;Peasant15;Coordinates{x=5, y=9}
+2;Dark;Peasant16;Coordinates{x=6, y=9}
+2;Dark;Peasant18;Coordinates{x=8, y=9}
+2;Light;Sniper0;Coordinates{x=0, y=0}
+2;Light;Sniper2;Coordinates{x=2, y=0}
+2;Light;Warlock3;Coordinates{x=3, y=0}
+2;Light;Sniper5;Coordinates{x=5, y=0}
+2;Light;Warlock7;Coordinates{x=7, y=0}
+2;Light;Warlock9;Coordinates{x=9, y=0}
+2;Light;Robber1;Coordinates{x=0, y=1}
+2;Light;Robber6;Coordinates{x=7, y=1}
+2;Dark;Monk13;Coordinates{x=3, y=9}
+2;Dark;Xbowman10;Coordinates{x=0, y=9}
+2;Dark;Spearman14;Coordinates{x=5, y=8}
+2;Dark;Spearman17;Coordinates{x=8, y=8}
+2;Dark;Spearman19;Coordinates{x=9, y=8}
+2;Light;Peasant4;Coordinates{x=4, y=0}
+2;Light;Peasant8;Coordinates{x=8, y=0}
+2;Dark;Peasant11;Coordinates{x=1, y=9}
+2;Dark;Peasant12;Coordinates{x=2, y=9}
+2;Dark;Peasant15;Coordinates{x=5, y=9}
+2;Dark;Peasant16;Coordinates{x=6, y=9}
+2;Dark;Peasant18;Coordinates{x=8, y=9}
+3;Light;Sniper0;Coordinates{x=0, y=0}
+3;Light;Sniper2;Coordinates{x=2, y=0}
+3;Light;Warlock3;Coordinates{x=3, y=0}
+3;Light;Sniper5;Coordinates{x=5, y=0}
+3;Light;Warlock7;Coordinates{x=7, y=0}
+3;Light;Warlock9;Coordinates{x=9, y=0}
+3;Light;Robber1;Coordinates{x=0, y=2}
+3;Light;Robber6;Coordinates{x=8, y=2}
+3;Dark;Monk13;Coordinates{x=3, y=9}
+3;Dark;Xbowman10;Coordinates{x=0, y=9}
+3;Dark;Spearman14;Coordinates{x=5, y=8}
+3;Dark;Spearman17;Coordinates{x=9, y=7}
+3;Dark;Spearman19;Coordinates{x=9, y=8}
+3;Light;Peasant4;Coordinates{x=4, y=0}
+3;Light;Peasant8;Coordinates{x=8, y=0}
+3;Dark;Peasant11;Coordinates{x=1, y=9}
+3;Dark;Peasant12;Coordinates{x=2, y=9}
+3;Dark;Peasant15;Coordinates{x=5, y=9}
+3;Dark;Peasant16;Coordinates{x=6, y=9}
+3;Dark;Peasant18;Coordinates{x=8, y=9}
+2;Light;Sniper0;Coordinates{x=0, y=0}
+2;Light;Sniper2;Coordinates{x=2, y=0}
+2;Light;Warlock3;Coordinates{x=3, y=0}
+2;Light;Sniper5;Coordinates{x=5, y=0}
+2;Light;Warlock7;Coordinates{x=7, y=0}
+2;Light;Warlock9;Coordinates{x=9, y=0}
+2;Light;Robber1;Coordinates{x=0, y=1}
+2;Light;Robber6;Coordinates{x=7, y=1}
+2;Dark;Monk13;Coordinates{x=3, y=9}
+2;Dark;Xbowman10;Coordinates{x=0, y=9}
+2;Dark;Spearman14;Coordinates{x=5, y=8}
+2;Dark;Spearman17;Coordinates{x=8, y=8}
+2;Dark;Spearman19;Coordinates{x=9, y=8}
+2;Light;Peasant4;Coordinates{x=4, y=0}
+2;Light;Peasant8;Coordinates{x=8, y=0}
+2;Dark;Peasant11;Coordinates{x=1, y=9}
+2;Dark;Peasant12;Coordinates{x=2, y=9}
+2;Dark;Peasant15;Coordinates{x=5, y=9}
+2;Dark;Peasant16;Coordinates{x=6, y=9}
+2;Dark;Peasant18;Coordinates{x=8, y=9}
+3;Light;Sniper0;Coordinates{x=0, y=0}
+3;Light;Sniper2;Coordinates{x=2, y=0}
+3;Light;Warlock3;Coordinates{x=3, y=0}
+3;Light;Sniper5;Coordinates{x=5, y=0}
+3;Light;Warlock7;Coordinates{x=7, y=0}
+3;Light;Warlock9;Coordinates{x=9, y=0}
+3;Light;Robber1;Coordinates{x=0, y=2}
+3;Light;Robber6;Coordinates{x=8, y=2}
+3;Dark;Monk13;Coordinates{x=3, y=9}
+3;Dark;Xbowman10;Coordinates{x=0, y=9}
+3;Dark;Spearman14;Coordinates{x=5, y=8}
+3;Dark;Spearman17;Coordinates{x=9, y=7}
+3;Dark;Spearman19;Coordinates{x=9, y=8}
+3;Light;Peasant4;Coordinates{x=4, y=0}
+3;Light;Peasant8;Coordinates{x=8, y=0}
+3;Dark;Peasant11;Coordinates{x=1, y=9}
+3;Dark;Peasant12;Coordinates{x=2, y=9}
+3;Dark;Peasant15;Coordinates{x=5, y=9}
+3;Dark;Peasant16;Coordinates{x=6, y=9}
+3;Dark;Peasant18;Coordinates{x=8, y=9}
+4;Light;Sniper0;Coordinates{x=0, y=0}
+4;Light;Sniper2;Coordinates{x=2, y=0}
+4;Light;Warlock3;Coordinates{x=3, y=0}
+4;Light;Sniper5;Coordinates{x=5, y=0}
+4;Light;Warlock7;Coordinates{x=7, y=0}
+4;Light;Warlock9;Coordinates{x=9, y=0}
+4;Light;Robber1;Coordinates{x=0, y=3}
+4;Light;Robber6;Coordinates{x=9, y=3}
+4;Dark;Monk13;Coordinates{x=3, y=9}
+4;Dark;Xbowman10;Coordinates{x=0, y=9}
+4;Dark;Spearman14;Coordinates{x=5, y=8}
+4;Dark;Spearman17;Coordinates{x=9, y=6}
+4;Dark;Spearman19;Coordinates{x=9, y=8}
+4;Light;Peasant4;Coordinates{x=4, y=0}
+4;Light;Peasant8;Coordinates{x=8, y=0}
+4;Dark;Peasant11;Coordinates{x=1, y=9}
+4;Dark;Peasant12;Coordinates{x=2, y=9}
+4;Dark;Peasant15;Coordinates{x=5, y=9}
+4;Dark;Peasant16;Coordinates{x=6, y=9}
+4;Dark;Peasant18;Coordinates{x=8, y=9}

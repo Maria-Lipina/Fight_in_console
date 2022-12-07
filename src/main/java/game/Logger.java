@@ -9,6 +9,7 @@ public class Logger {
     private ArrayList<String[]> table;
 
     public Logger(String filepath, String[] header) throws IOException {
+        //хорошо бы переделать систему таким образом, чтобы на каждую стычку создавался новый файл с новым именем в определенной папке
         fw = new FileWriter(filepath, false);
         fw.append(String.join(";", header));
         table = new ArrayList<>();
@@ -23,6 +24,7 @@ public class Logger {
                 fw.append("\r\n");
                 fw.append(String.join(";", i));
             }
+            fw.flush();
         }
 
     public void close() throws IOException {

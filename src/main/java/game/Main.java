@@ -30,9 +30,15 @@ public class Main {
             lg.print();
             System.out.println(ConsoleView.field());
             step++;
+
+//            if (step == 7) {
+//                Team.sortByStatus(lightSide);
+//                lightSide.forEach(n -> System.out.println(n.getInfo()));
+//            }
+
         } while ((char) System.in.read() != 'Q');
 
-        lg.close();
+        //lg.close();
 
 
     }

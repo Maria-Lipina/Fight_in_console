@@ -11,15 +11,35 @@ import static game.Main.*;
 public class Turn {
     private static HashMap<Integer, List <String>> phases = new HashMap<>();
 
-    public static void orderBySpeed() throws IOException {
+    private static ArrayList<BaseHero> crowd = new ArrayList<>();
+
+    public static void orderBySpeed() {
 
         if (Main.step == 1) {
-            Team.sortBySpeed(Main.lightSide);
-            Team.sortBySpeed(Main.darkSide);
+            crowd.addAll(lightSide);
+            crowd.addAll(darkSide);
+            Team.sortBySpeed(crowd);
+
+//            Team.sortBySpeed(Main.lightSide);
+//            Team.sortBySpeed(Main.darkSide);
 
         } else {
-            Main.lightSide.forEach(n -> n.step(Main.darkSide));
-            Main.darkSide.forEach(n -> n.step(Main.lightSide));
+//            Main.lightSide.forEach(n -> n.step(Main.darkSide));
+//            Main.darkSide.forEach(n -> n.step(Main.lightSide));
+            for (BaseHero h: crowd) {
+                if (h.getSide().equals("Light")) {
+                    h.step(darkSide);
+                    lg.add(new String[] {
+                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
+                    });
+                }
+                if (h.getSide().equals("Dark")) {
+                    h.step(lightSide);
+                    lg.add(new String[] {
+                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
+                    });
+                }
+            }
         }
     }
 

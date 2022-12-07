@@ -48,6 +48,10 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return id;
     }
 
+    public String getSide() {
+        return side;
+    }
+
     public String getStatus() {
         return status;
     }
@@ -63,7 +67,9 @@ public abstract class BaseHero implements BaseInterface, Iterator {
                 ", defense=" + defense +
                 ", damage=" + Arrays.toString(damage) +
                 ", health=" + health +
-                ", speed=" + speed;
+                ", speed=" + speed +
+                ", status=" + status;
+
     }
 
     private int classFields;
@@ -102,12 +108,13 @@ public abstract class BaseHero implements BaseInterface, Iterator {
     @Override
     public void step(ArrayList<BaseHero> enemy) {}
 
-    @Override
-    public void logIt(BaseHero target, int damageValue) {
-        Main.lg.add(
-                new String[] {Integer.toString(Main.step), side, name+id, target.name+target.id, Integer.toString(damageValue)}
-        );
-    }
+//    @Override
+//    public void logIt(BaseHero target, int damageValue) {
+////        "Step No", "Side", "Hero+ID", "Target", "Damage val"
+//        Main.lg.add(
+//                new String[] {Integer.toString(Main.step), side, name+id, target.name+target.id, Integer.toString(damageValue)}
+//        );
+//    }
 
     protected void damage(int damage) {
         health = health - damage;

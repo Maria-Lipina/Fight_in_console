@@ -17,7 +17,7 @@ public class Monk extends BaseHero {
     @Override
     public void step(ArrayList<BaseHero> enemy) { //все равно все переписывать
         if (status.equals("dead")) {
-            super.logIt(this, 0);
+//            super.logIt(this, 0);
             return;
         }
         double mostDamaged = myParty.get(0).maxHealth -
@@ -33,7 +33,7 @@ public class Monk extends BaseHero {
         }
         myParty.get(mostDamagedInd).damage(damage[0]);
         myParty.get(mostDamagedInd).status = "stand";
-        super.logIt(myParty.get(mostDamagedInd), damage[0]);
+//        super.logIt(myParty.get(mostDamagedInd), damage[0]);
     }
 
 }

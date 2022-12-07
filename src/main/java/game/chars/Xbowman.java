@@ -22,7 +22,7 @@ public class Xbowman extends BaseHero {
     @Override
     public void step(ArrayList<BaseHero> enemy) {
         if (status.equals("dead")) {
-            super.logIt(this, 0);
+//            super.logIt(this, 0);
             return;
         }
         for (BaseHero h: myParty) {
@@ -34,7 +34,7 @@ public class Xbowman extends BaseHero {
         }
         if (shoot<1) {
             status = "used";
-            super.logIt(this, 0);
+//            super.logIt(this, 0);
             return;
         }
         BaseHero target = position.findNearest(enemy);
@@ -45,7 +45,7 @@ public class Xbowman extends BaseHero {
         target.damage(damageValue);
         shoot--;
 
-        super.logIt(target, damageValue);
+//        super.logIt(target, damageValue);
     }
 }
 

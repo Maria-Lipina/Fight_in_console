@@ -4,15 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила к игре небольшой логгер, кто кого насколько сильно">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="исправила логгер, как убрать теперь лишние обращения к героям? слишком много вызовов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.csv" beforeDir="false" afterPath="$PROJECT_DIR$/log.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Turn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -21,6 +25,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -123,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670330891877</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="исправила логгер, как убрать теперь лишние обращения к героям? слишком много вызовов">
+      <created>1670337831547</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670337831547</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -131,7 +147,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="redo_step_turn" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -146,6 +174,7 @@
     <MESSAGE value="изменила конкатенацию строк &quot;+&quot; на стрингбилдеры. В консоль печатается что-то лишнее" />
     <MESSAGE value="исправила расчет расстояния между персонажами. Ура, теперь все ходят правильно и наносят урон. Удалила лишние комментарии в коде" />
     <MESSAGE value="Добавила к игре небольшой логгер, кто кого насколько сильно" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила к игре небольшой логгер, кто кого насколько сильно" />
+    <MESSAGE value="исправила логгер, как убрать теперь лишние обращения к героям? слишком много вызовов" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправила логгер, как убрать теперь лишние обращения к героям? слишком много вызовов" />
   </component>
 </project>

@@ -3,6 +3,7 @@ package game.chars;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Random;
+import java.util.function.Predicate;
 
 public class Team {
     public static ArrayList<BaseHero> make(int teamCount, String [] request, int x, int y, String side) { //x и y (это по-хорошему должно быть в документации) - это начальные значения, от которых начинается отсчет
