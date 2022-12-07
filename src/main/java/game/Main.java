@@ -5,6 +5,7 @@ import game.chars.Team;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 public class Main {
 
     public static final int TEAM_SIZE = 10;
@@ -20,25 +21,24 @@ public class Main {
     public static void main(String[] args) throws IOException { //кнопка вкл для всей игры
 
         String [] request = new String [] {"Peasant", "Robber", "Sniper", "Warlock"};
-        String [] request1 = new String [] {"Peasant", "Spearman", "Xbowman", "Monk"};
+        String [] request1 = new String [] {"", "Peasant", "Spearman", "Xbowman", "Monk"};
         Main.lightSide = Team.make(TEAM_SIZE, request, 0, 0, "Light");
         Main.darkSide = Team.make(TEAM_SIZE, request1, 0, Main.FIELD_SIZE-1, "Dark");
         lg = new Logger("log.csv", new String[]{"Step No", "Side", "Hero+ID", "Target", "Damage val"});
-
+        ConsoleView view = null;
         do {
-            Turn.orderBySpeed();
-            lg.print();
-            System.out.println(ConsoleView.field());
-            step++;
 
-//            if (step == 7) {
-//                Team.sortByStatus(lightSide);
-//                lightSide.forEach(n -> System.out.println(n.getInfo()));
-//            }
+            if (step++ == 0) {
+                Fight fight = new Fight();
+                view = new ConsoleView(TEAM_SIZE, FIELD_SIZE, fight.getMembers());
+
+            } else {
+                Turn.orderBySpeed();
+                lg.print();
+                System.out.println(view.show(step));
+            }
 
         } while ((char) System.in.read() != 'Q');
-
-        //lg.close();
 
 
     }

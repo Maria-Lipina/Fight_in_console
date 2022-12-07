@@ -1,14 +1,32 @@
 package game;
 
 import game.chars.Coordinates;
+import game.chars.Party;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 
 public class ConsoleView {
-    private static StringBuilder field = new StringBuilder();
-    public static StringBuilder field() {
+    private StringBuilder field;
+    private StringBuilder charTable = new StringBuilder();
+    private int fieldSize;
+    private int teamCount;
+    private Party members;
 
-        if (Main.step == 1) {
+    public ConsoleView(int fieldSize, int teamCount, Party members) {
+        this.field = new StringBuilder();
+        this.fieldSize = fieldSize;
+        this.teamCount = teamCount;
+        this.members = members;
+    }
+
+    public StringBuilder show(int step) {
+
+        field.delete(0, field.length());
+
+        if (step == 1) {
             field.append(Colors.ANSI_RED);
             field.append("First step!");
             field.append(Colors.ANSI_RESET);
@@ -17,39 +35,37 @@ public class ConsoleView {
         else {
             field.append(Colors.ANSI_RED);
             field.append("Step: ");
-            field.append(Main.step);
+            field.append(step);
             field.append(Colors.ANSI_RESET);
             field.append("\n");
         }
 
         // Верх игровое поле
         field.append("\u250c");
-        field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u252c")));
+        field.append(String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u252c")));
         field.append("\u2500\u2500\u2510\n");
 
         // Середина игровое поле
-        for (int i = 0; i < Main.FIELD_SIZE; i++) {
-            ConsoleView.getCharFull(i);
+        for (int i = 0; i < fieldSize; i++) {
+            this.getCharFull(i);
             field.append("\u251c");
-            field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u253c")));
+            field.append(String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u253c")));
             field.append("\u2500\u2500\u2524\n");
         }
 
         // Низ игровое поле
-        ConsoleView.getCharFull(Main.FIELD_SIZE-1);
+        this.getCharFull(fieldSize-1);
         field.append("\u2514");
-        field.append(String.join("", Collections.nCopies(Main.FIELD_SIZE-1, "\u2500\u2500\u2534")));
+        field.append(String.join("", Collections.nCopies(fieldSize-1, "\u2500\u2500\u2534")));
         field.append("\u2500\u2500\u2518\n");
         field.append("Press ENTER to continue. Press Q to exit\n");
 
         return field;
     }
 
-    private static StringBuilder charTable = new StringBuilder();
+    private void getChar(int x, int y) {
 
-    private static void getChar(int x, int y) {
-
-        for (int i = 0; i < Main.TEAM_SIZE; i++) {
+        for (int i = 0; i < teamCount; i++) {
             if (Main.lightSide.get(i).getPosition().isSame(new Coordinates(x, y))) {
                 if (Main.lightSide.get(i).getStatus().equals("dead")) {
                     field.append(Colors.ANSI_RED);
@@ -119,12 +135,12 @@ public class ConsoleView {
         field.append("  ");
     }
 
-    public static void getCharFull (int x) {
+    private void getCharFull (int x) {
         field.append("\u2502");
-        ConsoleView.getChar(x, 0);
+        this.getChar(x, 0);
         for (int y = 1; y < Main.FIELD_SIZE; y++) {
             field.append("\u2502");
-            ConsoleView.getChar(x, y);
+            this.getChar(x, y);
         }
         field.append(String.format("\u2502%s\n", charTable));
         charTable.delete(0, charTable.length());
