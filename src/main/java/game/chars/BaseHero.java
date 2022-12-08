@@ -1,7 +1,5 @@
 package game.chars;
 
-import game.Main;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -9,22 +7,28 @@ import java.util.Iterator;
 public abstract class BaseHero implements BaseInterface, Iterator {
     protected int attack;
     protected int defense;
+
     protected int[] damage;
+
+    protected int damageValue;
     protected int health;
     protected int maxHealth;
     protected int speed;
     protected String name;
     protected ArrayList<BaseHero> myParty;
+
+    protected BaseHero target;
+
     protected Coordinates position;
     protected String status;
 
-    protected String side;
+    protected String fraction;
 
     private static int idCount = 0;
-
     protected int id;
 
-    public BaseHero(int attack, int defense, int[] damage, int health, int speed, String name, ArrayList<BaseHero> myParty, int x, int y, String side) {
+    public BaseHero(int attack, int defense, int[] damage, int health, int speed,
+                    String name, ArrayList<BaseHero> myParty, int x, int y, String fraction) {
         this.attack = attack;
         this.defense = defense;
         this.damage = damage;
@@ -36,7 +40,9 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         this.position = new Coordinates(x, y);
         this.status = "stand";
         this.id = idCount++;
-        this.side = side;
+        this.fraction = fraction;
+        this.target = null;
+        this.damageValue = 0;
     }
     /* Шпаргалка по имеющимся статусам
      * stand - для всех. Жив и готов сражаться. По сути аналогичен статусу alive
@@ -48,8 +54,8 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return id;
     }
 
-    public String getSide() {
-        return side;
+    public String getFraction() {
+        return fraction;
     }
 
     public String getStatus() {
@@ -60,15 +66,46 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return position;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    @Override
+    public void step(Party party) {}
+
+    protected void damage(int damage) {
+        health = health - damage;
+        if (health <= 0) {
+            status = "dead";
+            health = 0;
+        }
+        if (health > maxHealth) health = maxHealth;
+    }
+
+    protected int damageValue(BaseHero h) {
+        int flag = attack - h.defense;
+        int value = 0;
+        if (flag == 0) value = ((damage[0] + damage[1]) / 2);
+        if (flag > 0) value = damage[1];
+        if (flag < 0) value = damage[0];
+        return value;
+    }
+
     @Override
     public String getInfo() {
-        return "name=" + name +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", damage=" + Arrays.toString(damage) +
-                ", health=" + health +
-                ", speed=" + speed +
-                ", status=" + status;
+        return "fraction=" + fraction +
+                ";name=" + name + id +
+                ";attack=" + attack +
+                ";defense=" + defense +
+                ";damage=" + Arrays.toString(damage) +
+                ";health=" + health +
+                ";speed=" + speed +
+                ";status=" + status +
+                ";position=" + position.toString();
 
     }
 
@@ -96,42 +133,9 @@ public abstract class BaseHero implements BaseInterface, Iterator {
         return null;
     }
 
+    // "Step No", "Side", "MyName+ID", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"
+    public void defaultLog() {
 
-    public String getName() {
-        return name;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public void step(ArrayList<BaseHero> enemy) {}
-
-//    @Override
-//    public void logIt(BaseHero target, int damageValue) {
-////        "Step No", "Side", "Hero+ID", "Target", "Damage val"
-//        Main.lg.add(
-//                new String[] {Integer.toString(Main.step), side, name+id, target.name+target.id, Integer.toString(damageValue)}
-//        );
-//    }
-
-    protected void damage(int damage) {
-        health = health - damage;
-        if (health <= 0) {
-            status = "dead";
-            health = 0;
-        }
-        if (health > maxHealth) health = maxHealth;
-    }
-
-    protected int damageValue(BaseHero h) {
-        int flag = attack - h.defense;
-        int value = 0;
-        if (flag == 0) value = ((damage[0] + damage[1]) / 2);
-        if (flag > 0) value = damage[1];
-        if (flag < 0) value = damage[0];
-        return value;
     }
 
 }

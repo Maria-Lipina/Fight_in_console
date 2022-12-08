@@ -1,28 +1,52 @@
 package game;
 
+import game.chars.BaseHero;
+import game.chars.Party;
+
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Logger {
     private FileWriter fw;
+    private StringBuilder sb;
     private ArrayList<String[]> table;
 
-    public Logger(String filepath, String[] header) throws IOException {
-        //хорошо бы переделать систему таким образом, чтобы на каждую стычку создавался новый файл с новым именем в определенной папке
-        fw = new FileWriter(filepath, false);
-        fw.append(String.join(";", header));
-        table = new ArrayList<>();
+    private Party members;
+
+    String[] header;
+
+    public Logger(Party members) throws IOException {
+
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("MM.dd_HH.mm.ss");
+        sb = new StringBuilder("D:\\IT\\Java\\Fight in console\\log\\");
+        sb.append(dtf.format(LocalDateTime.now()));
+        sb.append(".csv");
+
+        fw = new FileWriter(sb.toString(), false);
+        sb.delete(0, sb.length());
+
+        this.header = new String[]{"StepNo", "Fraction", "Me", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"};
+        this.members = members;
+
     }
-        //"Step No", "Side", "Hero+ID", "Target", "Damage val"
+    //TODO потом попробовать обойтись без ArrayList. Через родной знакомый StringBuilder сразу в строку и в файл
         public void add (String[] data) {
             table.add(data);
         }
 
-        public void print() throws IOException {
-            for (String[] i: table) {
-                fw.append("\r\n");
-                fw.append(String.join(";", i));
+        public void printDefault(int step) throws IOException {
+            if (step == 0) {
+                for (int i = 0; i < members.size(); i++) {
+                    fw.append(members.get(i).getInfo());
+                    fw.append("\r\n");
+                }
+                fw.append(String.join(";", header));
+            } else {
+                // "Step No", "Side", "MyName+ID", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"
+                // здесь должен быть sb.append и итератор по нужным полям BaseHero для лога
             }
             fw.flush();
         }

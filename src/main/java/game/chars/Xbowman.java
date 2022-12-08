@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 public class Xbowman extends BaseHero {
     private int shoot;
-    public Xbowman(ArrayList<BaseHero> myParty, int x, int y, String side) {
-        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", myParty, x, y, side);
+    public Xbowman(ArrayList<BaseHero> myParty, int x, int y, String fraction) {
+        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", myParty, x, y, fraction);
         this.shoot = 16;
     }
-    public Xbowman(int attack, int protection, int[] damage, int health, int speed, String name, int shoot, ArrayList<BaseHero> myParty, int x, int y, String side) {
-        super(attack, protection, damage, health, speed, name, myParty, x, y, side);
+    public Xbowman(int attack, int protection, int[] damage, int health, int speed,
+                   String name, int shoot, ArrayList<BaseHero> myParty, int x, int y, String fraction) {
+        super(attack, protection, damage, health, speed, name, myParty, x, y, fraction);
         this.shoot = shoot;
     }
 
@@ -20,7 +21,7 @@ public class Xbowman extends BaseHero {
     }
 
     @Override
-    public void step(ArrayList<BaseHero> enemy) {
+    public void step(Party party) {
         if (status.equals("dead")) {
 //            super.logIt(this, 0);
             return;
@@ -37,7 +38,7 @@ public class Xbowman extends BaseHero {
 //            super.logIt(this, 0);
             return;
         }
-        BaseHero target = position.findNearest(enemy);
+        BaseHero target = position.findNearest(party.getByFraction(fraction, false));
         double dist = position.distance(target.position);
         int damageValue = (dist < speed ?
                 super.damageValue(target) :

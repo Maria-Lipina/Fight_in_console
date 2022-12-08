@@ -3,10 +3,8 @@ package game;
 import game.chars.Coordinates;
 import game.chars.Party;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
+
 
 public class ConsoleView {
     private StringBuilder field;
@@ -15,6 +13,7 @@ public class ConsoleView {
     private int teamCount;
     private Party members;
 
+    //TODO: не забыть потом здесь сменить обращение к статическим полям main на обращение к собственному полю members
     public ConsoleView(int fieldSize, int teamCount, Party members) {
         this.field = new StringBuilder();
         this.fieldSize = fieldSize;
@@ -26,7 +25,7 @@ public class ConsoleView {
 
         field.delete(0, field.length());
 
-        if (step == 1) {
+        if (step == 0) {
             field.append(Colors.ANSI_RED);
             field.append("First step!");
             field.append(Colors.ANSI_RESET);
@@ -64,69 +63,53 @@ public class ConsoleView {
     }
 
     private void getChar(int x, int y) {
-
-        for (int i = 0; i < teamCount; i++) {
-            if (Main.lightSide.get(i).getPosition().isSame(new Coordinates(x, y))) {
-                if (Main.lightSide.get(i).getStatus().equals("dead")) {
+        for (int i = 0; i < members.size(); i++) {
+            if (members.get(i).getPosition().isSame(new Coordinates(x, y))) {
+                if (members.get(i).getStatus().equals("dead")) {
                     field.append(Colors.ANSI_RED);
-                    field.append(Main.lightSide.get(i).getName(), 0, 2);
+                    field.append(members.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
                     charTable.append("    ");
                     charTable.append(Colors.ANSI_RED);
-                    charTable.append(Main.lightSide.get(i).getName());
+                    charTable.append(members.get(i).getName());
                     charTable.append(" HP: ");
-                    charTable.append(Main.lightSide.get(i).getHealth());
+                    charTable.append(members.get(i).getHealth());
                     charTable.append(", Status: ");
-                    charTable.append(Main.lightSide.get(i).getStatus());
+                    charTable.append(members.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     return;
 
                 }
-                else {
+                if(members.get(i).getFraction().equals(
+                        members.getFraction(0))) {
                     field.append(Colors.ANSI_BLUE);
-                    field.append(Main.lightSide.get(i).getName(), 0, 2);
+                    field.append(members.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
                     charTable.append("    ");
                     charTable.append(Colors.ANSI_BLUE);
-                    charTable.append(Main.lightSide.get(i).getName());
+                    charTable.append(members.get(i).getName());
                     charTable.append(" HP: ");
-                    charTable.append(Main.lightSide.get(i).getHealth());
+                    charTable.append(members.get(i).getHealth());
                     charTable.append(", Status: ");
-                    charTable.append(Main.lightSide.get(i).getStatus());
+                    charTable.append(members.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     return;
                 }
-            }
-            if (Main.darkSide.get(i).getPosition().isSame(new Coordinates(x, y))) {
-                if (Main.darkSide.get(i).getStatus().equals("dead")) {
-                    field.append(Colors.ANSI_RED);
-                    field.append(Main.darkSide.get(i).getName(), 0, 2);
-                    field.append(Colors.ANSI_RESET);
-
-                    charTable.append("    ");
-                    charTable.append(Colors.ANSI_RED);
-                    charTable.append(Main.darkSide.get(i).getName());
-                    charTable.append(" HP: ");
-                    charTable.append(Main.darkSide.get(i).getHealth());
-                    charTable.append(", Status: ");
-                    charTable.append(Main.darkSide.get(i).getStatus());
-                    charTable.append(Colors.ANSI_RESET);
-                    return;
-                }
-                else {
+                if(members.get(i).getFraction().equals(
+                        members.getFraction(1))) {
                     field.append(Colors.ANSI_GREEN);
-                    field.append(Main.darkSide.get(i).getName(), 0, 2);
+                    field.append(members.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
 
                     charTable.append("    ");
                     charTable.append(Colors.ANSI_GREEN);
-                    charTable.append(Main.darkSide.get(i).getName());
+                    charTable.append(members.get(i).getName());
                     charTable.append(" HP: ");
-                    charTable.append(Main.darkSide.get(i).getHealth());
+                    charTable.append(members.get(i).getHealth());
                     charTable.append(", Status: ");
-                    charTable.append(Main.darkSide.get(i).getStatus());
+                    charTable.append(members.get(i).getStatus());
                     charTable.append(Colors.ANSI_RESET);
                     return;
                 }
@@ -138,7 +121,7 @@ public class ConsoleView {
     private void getCharFull (int x) {
         field.append("\u2502");
         this.getChar(x, 0);
-        for (int y = 1; y < Main.FIELD_SIZE; y++) {
+        for (int y = 1; y < fieldSize; y++) {
             field.append("\u2502");
             this.getChar(x, y);
         }

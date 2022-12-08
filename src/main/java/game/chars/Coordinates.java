@@ -6,7 +6,13 @@ import game.Main;
 import java.util.ArrayList;
 
 public class Coordinates {
-    public int x, y;
+    public int x, y, fieldSize;
+
+    public Coordinates (int x, int y, int fieldSize) {
+        this.x = x;
+        this.y = y;
+        this.fieldSize = fieldSize;
+    }
 
     public Coordinates (int x, int y) {
         this.x = x;
@@ -21,7 +27,7 @@ public class Coordinates {
         return (int) sqrt(pow((pos.x - this.x), 2) + pow((pos.y - this.y), 2));
     }
 
-    public BaseHero findNearest(ArrayList<BaseHero> enemy) {
+    public BaseHero findNearest(ArrayList<BaseHero> enemy) { //Здесь скорее FindNearestShoot для стрелков. Для пеших, чтобы дойти и всех обойти понадобится другой алгоритм
         double dist = this.distance(enemy.get(0).position);
         int nearestInd = 0;
         for (int i = 1; i < enemy.size(); i++) {
@@ -32,10 +38,10 @@ public class Coordinates {
         return enemy.get(nearestInd);
     }
 
-    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) { //По хорошему я должна так же проверить отсутствие союзников в клетке
+    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) {
         for (BaseHero h : party) {
             if ((h.position.isSame(pos))
-                    || (h.position.x >= Main.FIELD_SIZE) || (h.position.y >= Main.FIELD_SIZE))
+                    || (h.position.x >= fieldSize) || (h.position.y >= fieldSize))
                 return false;
         }
         return true;
@@ -43,10 +49,7 @@ public class Coordinates {
 
     @Override
     public String toString() {
-        return "Coordinates{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "{" + x + ", " + y + "}";
     }
 }
 

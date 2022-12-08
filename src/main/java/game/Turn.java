@@ -3,7 +3,6 @@ package game;
 import game.chars.BaseHero;
 import game.chars.Team;
 
-import java.io.IOException;
 import java.util.*;
 
 import static game.Main.*;
@@ -13,12 +12,12 @@ public class Turn {
 
     private static ArrayList<BaseHero> crowd = new ArrayList<>();
 
-    public static void orderBySpeed() {
+    public static void orderBySpeed(int step) {
 
-        if (Main.step == 1) {
+        if (step == 1) {
             crowd.addAll(lightSide);
             crowd.addAll(darkSide);
-            Team.sortBySpeed(crowd);
+//            Team.sortBySpeed(crowd);
 
 //            Team.sortBySpeed(Main.lightSide);
 //            Team.sortBySpeed(Main.darkSide);
@@ -27,25 +26,25 @@ public class Turn {
 //            Main.lightSide.forEach(n -> n.step(Main.darkSide));
 //            Main.darkSide.forEach(n -> n.step(Main.lightSide));
             for (BaseHero h: crowd) {
-                if (h.getSide().equals("Light")) {
+                if (h.getFraction().equals("Light")) {
                     h.step(darkSide);
-                    lg.add(new String[] {
-                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
-                    });
+//                    lg.add(new String[] {
+//                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
+//                    });
                 }
-                if (h.getSide().equals("Dark")) {
+                if (h.getFraction().equals("Dark")) {
                     h.step(lightSide);
-                    lg.add(new String[] {
-                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
-                    });
+//                    lg.add(new String[] {
+//                            Integer.toString(Main.step), h.getSide(), h.getName()+h.getId(), h.getPosition().toString()
+//                    });
                 }
             }
         }
     }
 
-    public static void orderByClass() {
+    public static void orderByClass(int step) {
 
-        if (Main.step == 1) {
+        if (step == 1) {
 
             phases.put(0, List.of("Robber", "Spearman"));
             phases.put(1, List.of("Sniper", "Xbowman"));

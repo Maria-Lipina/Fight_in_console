@@ -8,35 +8,27 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static final int TEAM_SIZE = 10;
-    public static final int FIELD_SIZE = 10;
-
-    public static int step = 1;
-
-    public static Logger lg;
-
     static ArrayList<BaseHero> lightSide;
     static ArrayList<BaseHero> darkSide;
 
-    public static void main(String[] args) throws IOException { //кнопка вкл для всей игры
+    public static void main(String[] args) throws IOException {
 
-        String [] request = new String [] {"Peasant", "Robber", "Sniper", "Warlock"};
-        String [] request1 = new String [] {"", "Peasant", "Spearman", "Xbowman", "Monk"};
-        Main.lightSide = Team.make(TEAM_SIZE, request, 0, 0, "Light");
-        Main.darkSide = Team.make(TEAM_SIZE, request1, 0, Main.FIELD_SIZE-1, "Dark");
-        lg = new Logger("log.csv", new String[]{"Step No", "Side", "Hero+ID", "Target", "Damage val"});
-        ConsoleView view = null;
+        int step = 0;
+        //TODO: в перспективе эти поля можно запрашивать у пользователя
+        int teamSize = 10;
+        int fieldSize = 10;
+        String [] request = new String [] {"Light", "Peasant", "Robber", "Sniper", "Warlock"};
+        String [] request1 = new String [] {"Dark", "Peasant", "Spearman", "Xbowman", "Monk"};
+
+        Fight fight = new Fight(teamSize, request, request1, fieldSize);
+        Logger lg = new Logger(fight.getMembers());
+        ConsoleView view = new ConsoleView(teamSize, fieldSize, fight.getMembers());
+
         do {
-
-            if (step++ == 0) {
-                Fight fight = new Fight();
-                view = new ConsoleView(TEAM_SIZE, FIELD_SIZE, fight.getMembers());
-
-            } else {
-                Turn.orderBySpeed();
-                lg.print();
-                System.out.println(view.show(step));
-            }
+            fight.round(step);
+            lg.printDefault(step);
+            System.out.println(view.show(step));
+            step++;
 
         } while ((char) System.in.read() != 'Q');
 
