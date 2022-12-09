@@ -32,11 +32,6 @@ public class Logger {
         this.members = members;
 
     }
-    //TODO потом попробовать обойтись без ArrayList. Через родной знакомый StringBuilder сразу в строку и в файл
-        public void add (String[] data) {
-            table.add(data);
-        }
-
         public void printDefault(int step) throws IOException {
             if (step == 0) {
                 for (int i = 0; i < members.size(); i++) {
@@ -45,14 +40,14 @@ public class Logger {
                 }
                 fw.append(String.join(";", header));
             } else {
-                // "Step No", "Side", "MyName+ID", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"
-                // здесь должен быть sb.append и итератор по нужным полям BaseHero для лога
+                for (int i = 0; i < members.size(); i++) {
+                    fw.append("\r\n");
+                    fw.append(Integer.toString(step));
+                    fw.append(";");
+                    fw.append(members.get(i).defaultLog());
+                }
             }
             fw.flush();
         }
-
-    public void close() throws IOException {
-        fw.flush();
-    }
 
 }

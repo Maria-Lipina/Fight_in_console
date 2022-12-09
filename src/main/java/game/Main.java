@@ -1,15 +1,8 @@
 package game;
 
-import game.chars.BaseHero;
-import game.chars.Team;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Main {
-
-    static ArrayList<BaseHero> lightSide;
-    static ArrayList<BaseHero> darkSide;
 
     public static void main(String[] args) throws IOException {
 
@@ -31,7 +24,6 @@ public class Main {
             step++;
 
         } while ((char) System.in.read() != 'Q');
-
 
     }
 }

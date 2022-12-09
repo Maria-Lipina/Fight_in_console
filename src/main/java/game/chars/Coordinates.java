@@ -27,7 +27,7 @@ public class Coordinates {
         return (int) sqrt(pow((pos.x - this.x), 2) + pow((pos.y - this.y), 2));
     }
 
-    public BaseHero findNearest(ArrayList<BaseHero> enemy) { //Здесь скорее FindNearestShoot для стрелков. Для пеших, чтобы дойти и всех обойти понадобится другой алгоритм
+    public BaseHero findNearest(ArrayList<BaseHero> enemy) {
         double dist = this.distance(enemy.get(0).position);
         int nearestInd = 0;
         for (int i = 1; i < enemy.size(); i++) {
@@ -38,7 +38,7 @@ public class Coordinates {
         return enemy.get(nearestInd);
     }
 
-    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) {
+    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) { //TODO: переписать. Spearman ходит совсем неправильно
         for (BaseHero h : party) {
             if ((h.position.isSame(pos))
                     || (h.position.x >= fieldSize) || (h.position.y >= fieldSize))

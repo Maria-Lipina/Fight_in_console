@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="начала переписывать View (ура, первый класс, который из статического стал объектом). Создала файлы">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="попробовала написать сортировку по классу - не работает">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Turn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Turn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Turn.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
@@ -21,7 +19,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Team.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
@@ -38,8 +36,16 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="onto" value="988ab234ec9d69c857acc3723d875df38ec69804" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -53,13 +59,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IT/Java/Fight in console&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/IT/Java/Fight in console"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
+    ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IT\Java\Fight in console" />
@@ -81,6 +92,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -153,12 +168,35 @@
     <option name="localTasksCounter" value="9" />
     <servers />
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="Space.CommitStatus" />
+      </list>
+    </option>
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="redo_step_turn" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -174,6 +212,30 @@
     <MESSAGE value="исправила расчет расстояния между персонажами. Ура, теперь все ходят правильно и наносят урон. Удалила лишние комментарии в коде" />
     <MESSAGE value="Добавила к игре небольшой логгер, кто кого насколько сильно" />
     <MESSAGE value="начала переписывать View (ура, первый класс, который из статического стал объектом). Создала файлы" />
-    <option name="LAST_COMMIT_MESSAGE" value="начала переписывать View (ура, первый класс, который из статического стал объектом). Создала файлы" />
+    <MESSAGE value="попробовала написать сортировку по классу - не работает" />
+    <option name="LAST_COMMIT_MESSAGE" value="попробовала написать сортировку по классу - не работает" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/game/chars/Monk.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/game/chars/Spearman.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint log-message="true" type="java-exception" />
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
