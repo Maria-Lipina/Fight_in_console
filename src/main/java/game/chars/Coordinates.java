@@ -1,7 +1,6 @@
 package game.chars;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
-import game.Main;
 
 import java.util.ArrayList;
 
@@ -53,4 +52,3 @@ public class Coordinates {
     }
 }
 
-//здесь должен быть метод следующего шага, потому что жто смена координат. Или метод смены координат, который будет в себе проверять на границы поля, к которому будет обращаться в мэйне

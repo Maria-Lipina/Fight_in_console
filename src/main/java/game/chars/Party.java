@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Party {
     public ArrayList<BaseHero> members;
-    private ArrayList<String> fractions;
+    private final ArrayList<String> fractions;
 
     public Party(int teamSize, String [] request, String [] request1, int fieldSize) {
         fractions = new ArrayList<>();
@@ -44,12 +44,7 @@ public class Party {
     }
 
     public void sortBySpeed() {
-        Comparator<BaseHero> comp = new Comparator<>() {
-            @Override
-            public int compare(BaseHero h1, BaseHero h2) {
-                return Integer.compare(h1.speed, h2.speed);
-            }
-        };
+        Comparator<BaseHero> comp = (h1, h2) -> Integer.compare(h1.speed, h2.speed);
         members.sort(comp.reversed());
     }
 
@@ -74,68 +69,4 @@ public class Party {
         return res;
     }
 
-
-
-    public void sortByClass() {
-
-        HashMap<String, Integer> order = new HashMap<>();
-        order.put("Robber", 0);
-        order.put("Spearman", 0);
-        order.put("Sniper", 1);
-        order.put("Xbowman", 1);
-        order.put("Monk", 2);
-        order.put("Warlock", 2);
-        order.put("Peasant", 3);
-
-        mergeSort(order, members);
-        }
-
-        private void mergeSort(HashMap<String, Integer> order, ArrayList<BaseHero> sortThem) {
-        int n = sortThem.size();
-        if (n==1) return;
-        int mid = n / 2;
-            ArrayList<BaseHero> l = new ArrayList<>();
-            ArrayList<BaseHero> r = new ArrayList<>();
-            for (int i = 0; i < mid; i++) l.add(i, sortThem.get(i));
-            for (int i = mid; i < n; i++) r.add(i-mid, sortThem.get(i));
-
-            mergeSort(order, l);
-            mergeSort(order, r);
-            merge(order, members, l, r);
-            }
-
-        private void merge(HashMap<String, Integer> order,
-                           ArrayList<BaseHero> members,  ArrayList<BaseHero> l, ArrayList<BaseHero> r) {
-        int left = l.size();
-        int right = r.size();
-        int i = 0;
-        int j = 0;
-        int idx = 0;
-
-        while (i < left && j < right) {
-            if(order.get(l.get(i).getName()) < order.get(r.get(i).getName())) {
-                if (idx < members.size()) {
-                    members.set(idx++, l.get(i));
-                }
-                i++;
-            } else {
-                if (idx < members.size()) {
-                    members.set(idx++, r.get(j));
-                }
-                j++;
-            }
-
-            for (int le = i; le < left; le++) {
-                if (idx < members.size()) members.set(idx++, l.get(le));
-            }
-            for (int ra = j; ra < left; ra++) {
-                if (idx < members.size()) members.set(idx++, r.get(ra));
-            }
-        }
-
-    }
-
 }
-
-//На прошлом занятии делали возможность добавления группового юнита: ячейка одна, но здоровье и урон помножены на количество членов отряда. При добавлении такого юнита изменяется вид: На поле под буквой количество. Ячейка больше в ширину и в высоту на 1. Как при таком распечатывать информацию о персонажах, как разбивать стрингбилдер строку на две... хороший вопрос
-

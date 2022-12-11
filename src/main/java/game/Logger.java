@@ -1,18 +1,15 @@
 package game;
 
-import game.chars.BaseHero;
 import game.chars.Party;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 public class Logger {
     private FileWriter fw;
     private StringBuilder sb;
-    private ArrayList<String[]> table;
 
     private Party members;
 
@@ -51,3 +48,4 @@ public class Logger {
         }
 
 }
+

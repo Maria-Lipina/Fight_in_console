@@ -40,11 +40,6 @@ public abstract class BaseHero implements BaseInterface {
         this.target = this;
         this.damageValue = 0;
     }
-    /* Шпаргалка по имеющимся статусам
-     * stand - для всех. Жив и готов сражаться. По сути аналогичен статусу alive
-     * used - для крестьян, что они свою стрелу подали. Или для стрелков, что у них боеприпас закончился, а здоровье ещё нет
-     * dead - умер. Здоровье = или меньше 0
-     * */
 
     public String getFraction() {
         return fraction;
@@ -53,6 +48,12 @@ public abstract class BaseHero implements BaseInterface {
     public String getStatus() {
         return status;
     }
+
+    /* Шпаргалка по имеющимся статусам
+     * stand - для всех. Жив и готов сражаться. По сути аналогичен статусу alive
+     * used - для крестьян, что они свою стрелу подали. Или для стрелков, что у них боеприпас закончился, а здоровье ещё нет
+     * dead - умер. Здоровье = или меньше 0
+     * */
 
     public Coordinates getPosition() {
         return position;
@@ -101,8 +102,6 @@ public abstract class BaseHero implements BaseInterface {
 
     }
 
-    // "Step No", "Side", "MyName+ID", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"
-    //TODO: А ведь сюда по плану должен обращаться логгер
     public String defaultLog() {
         return String.join(";", fraction, name+id,
                 position.toString(), target.name+target.id, target.position.toString(), String.valueOf(damageValue), status);

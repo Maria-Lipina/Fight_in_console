@@ -10,14 +10,12 @@ public class ConsoleView {
     private StringBuilder field;
     private StringBuilder charTable = new StringBuilder();
     private int fieldSize;
-    private int teamCount;
+
     private Party members;
 
-    //TODO: не забыть потом здесь сменить обращение к статическим полям main на обращение к собственному полю members
-    public ConsoleView(int fieldSize, int teamCount, Party members) {
+        public ConsoleView(int fieldSize, Party members) {
         this.field = new StringBuilder();
         this.fieldSize = fieldSize;
-        this.teamCount = teamCount;
         this.members = members;
     }
 

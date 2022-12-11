@@ -7,7 +7,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         int step = 0;
-        //TODO: в перспективе эти поля можно запрашивать у пользователя
         int teamSize = 10;
         int fieldSize = 10;
         String [] request = new String [] {"Light", "Peasant", "Robber", "Sniper", "Warlock"};
@@ -15,7 +14,7 @@ public class Main {
 
         Fight fight = new Fight(teamSize, request, request1, fieldSize);
         Logger lg = new Logger(fight.getMembers());
-        ConsoleView view = new ConsoleView(teamSize, fieldSize, fight.getMembers());
+        ConsoleView view = new ConsoleView(fieldSize, fight.getMembers());
 
         do {
             fight.round(step);
