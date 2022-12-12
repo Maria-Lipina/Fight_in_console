@@ -104,7 +104,7 @@ public abstract class BaseHero implements BaseInterface {
 
     public String defaultLog() {
         return String.join(";", fraction, name+id,
-                position.toString(), target.name+target.id, target.position.toString(), String.valueOf(damageValue), status);
+                position.toString(), target.name+target.id, target.position.toString(), String.valueOf(damageValue), target.status);
     }
 
 }

@@ -19,27 +19,33 @@ public class Spearman extends BaseHero {
     @Override
     public void step(Party party) {
 
-        target = position.findNearest(party.getByFraction(fraction, false));
+        target = position.findNearest(party.getAliveAsParty().getByFraction(fraction, false));
+        int x = position.x;
+        int y = position.y;
 
-        if (position.distance(target.position) <= (int) Math.sqrt(2)) {
+        if (position.distance(target.position) == (int) Math.sqrt(2)) {
             damageValue = super.damageValue(target);
             target.damage(damageValue);
             return;
         }
-        if (target.position.x < position.x && position.isValid(new Coordinates(--position.x, position.y, fieldSize), party.getAll())) {
-            --position.x;
+        if (target.position.x < position.x && position.isValid(new Coordinates(--x, y, fieldSize), party.getAll())) {
+            position.x++;
+            damageValue = 0;
             return;
         }
-        if (target.position.x > position.x && position.isValid(new Coordinates(++position.x, position.y, fieldSize), party.getAll())) {
-            ++position.x;
+        if (target.position.x > position.x && position.isValid(new Coordinates(++x, y, fieldSize), party.getAll())) {
+            position.x++;
+            damageValue = 0;
             return;
         }
-        if (target.position.y < position.y && position.isValid(new Coordinates(position.x, --position.y, fieldSize), party.getAll())) {
-            --position.y;
+        if (target.position.y < position.y && position.isValid(new Coordinates(x, --y, fieldSize), party.getAll())) {
+            position.y--;
+            damageValue = 0;
             return;
         }
-        if (target.position.y > position.y && position.isValid(new Coordinates(position.x, ++position.y, fieldSize), party.getAll())) {
-            ++position.y;
+        if (target.position.y > position.y && position.isValid(new Coordinates(x, ++y, fieldSize), party.getAll())) {
+            position.y++;
+            damageValue = 0;
         }
     }
 

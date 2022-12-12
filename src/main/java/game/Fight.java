@@ -21,7 +21,7 @@ public class Fight {
         if (step == 0) {
             members.sortBySpeed();
         } else {
-            ArrayList <BaseHero> active = members.getAlive();
+            ArrayList <BaseHero> active = members.getAliveAsList();
             for (BaseHero h: active) h.step(members);
         }
         }

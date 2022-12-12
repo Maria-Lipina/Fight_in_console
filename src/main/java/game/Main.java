@@ -1,6 +1,8 @@
 package game;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Main {
 
@@ -19,10 +21,11 @@ public class Main {
         do {
             fight.round(step);
             lg.printDefault(step);
-            System.out.println(view.show(step));
+//            System.out.println(view.show(step));
             step++;
 
         } while ((char) System.in.read() != 'Q');
+
 
     }
 }

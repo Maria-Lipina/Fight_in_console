@@ -21,7 +21,7 @@ public class Xbowman extends BaseHero {
     @Override
     public void step(Party party) {
 
-        for (BaseHero h: party.getByFraction(fraction, true)) {
+        for (BaseHero h: party.getAliveAsParty().getByFraction(fraction, true)) {
             if (h.name.equals("Peasant") && h.status.equals("stand")) {
                 shoot++;
                 h.status = "used";
@@ -34,7 +34,7 @@ public class Xbowman extends BaseHero {
             damageValue = 0;
             return;
         }
-        target = position.findNearest(party.getByFraction(fraction, false));
+        target = position.findNearest(party.getAliveAsParty().getByFraction(fraction, false));
         double dist = position.distance(target.position);
         damageValue = (dist < speed ?
                 super.damageValue(target) :

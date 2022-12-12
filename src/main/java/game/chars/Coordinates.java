@@ -19,7 +19,7 @@ public class Coordinates {
     }
 
     public boolean isSame(Coordinates pos) {
-        return this.x == pos.x && this.y == pos.y;
+        return (this.x == pos.x && this.y == pos.y);
     }
 
     public int distance(Coordinates pos) {
@@ -27,7 +27,7 @@ public class Coordinates {
     }
 
     public BaseHero findNearest(ArrayList<BaseHero> enemy) {
-        double dist = this.distance(enemy.get(0).position);
+        int dist = this.distance(enemy.get(0).position);
         int nearestInd = 0;
         for (int i = 1; i < enemy.size(); i++) {
             if (this.distance(enemy.get(i).position) < dist && !(enemy.get(i).status.equals("dead"))) {
@@ -40,7 +40,7 @@ public class Coordinates {
     public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) { //TODO: переписать. Spearman ходит совсем неправильно
         for (BaseHero h : party) {
             if ((h.position.isSame(pos))
-                    || (h.position.x >= fieldSize) || (h.position.y >= fieldSize))
+                    || (pos.x >= fieldSize) || (pos.y >= fieldSize))
                 return false;
         }
         return true;

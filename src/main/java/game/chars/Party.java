@@ -15,6 +15,7 @@ public class Party {
         members.addAll(this.makeRandomly(teamSize, request1, 0, fieldSize-1, request1[0], fieldSize));
     }
 
+
     public String getFraction(int index) {
         return fractions.get(index);
     }
@@ -48,12 +49,22 @@ public class Party {
         members.sort(comp.reversed());
     }
 
-    public ArrayList<BaseHero> getAlive() {
+    public ArrayList<BaseHero> getAliveAsList() {
         ArrayList<BaseHero> res = new ArrayList<>();
         for (BaseHero h: members) {
             if (!h.status.equals("dead")) res.add(h);
         }
         return res;
+    }
+
+
+    private Party(Party whole) {
+        this.fractions = whole.fractions;
+        this.members = whole.getAliveAsList();
+    }
+
+    public Party getAliveAsParty() {
+        return new Party(this);
     }
 
     public ArrayList<BaseHero> getAll() {
@@ -63,8 +74,10 @@ public class Party {
     public ArrayList<BaseHero> getByFraction(String fraction, boolean ally) {
         ArrayList<BaseHero> res = new ArrayList<>();
         for (BaseHero h: members) {
-            if (h.fraction.equals(fraction) && ally) res.add(h);
-            if (!(h.fraction.equals(fraction) && ally)) res.add(h);
+            if (!ally) {
+                if (!h.fraction.equals(fraction)) res.add(h);
+            }
+            if (ally && h.fraction.equals(fraction)) res.add(h);
         }
         return res;
     }

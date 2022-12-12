@@ -22,10 +22,13 @@ public class Monk extends BaseHero {
             if(((float) (allies.get(i).health / allies.get(i).maxHealth)) < mostDamaged) {
                 mostDamagedInd = i;
                 mostDamaged = (float) (allies.get(i).health / allies.get(i).maxHealth);
+
             }
         }
-        if (0.75 >= mostDamagedInd) {
-            ArrayList <BaseHero> enemies = party.getByFraction(fraction, false);
+        if (0.75 >= mostDamaged) {
+            ArrayList <BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
+            mostDamaged = 0;
+            mostDamagedInd = 0;
             for (int i = 1; i < enemies.size(); i++) {
                 if(((float) (enemies.get(i).health / enemies.get(i).maxHealth)) < mostDamaged) {
                     mostDamagedInd = i;

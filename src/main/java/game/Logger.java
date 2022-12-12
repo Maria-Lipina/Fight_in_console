@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class Logger {
     private FileWriter fw;
@@ -25,7 +26,7 @@ public class Logger {
         fw = new FileWriter(sb.toString(), false);
         sb.delete(0, sb.length());
 
-        this.header = new String[]{"StepNo", "Fraction", "Me", "MyPos", "Target", "TargetPos", "Damage val", "MyStatus"};
+        this.header = new String[]{"StepNo", "Fraction", "Me", "MyPos", "Target", "TargetPos", "Damage val", "TgStatus"};
         this.members = members;
 
     }
@@ -37,11 +38,11 @@ public class Logger {
                 }
                 fw.append(String.join(";", header));
             } else {
-                for (int i = 0; i < members.size(); i++) {
+                for (int i = 0; i < members.getAliveAsList().size(); i++) {
                     fw.append("\r\n");
                     fw.append(Integer.toString(step));
                     fw.append(";");
-                    fw.append(members.get(i).defaultLog());
+                    fw.append(members.getAliveAsList().get(i).defaultLog());
                 }
             }
             fw.flush();
