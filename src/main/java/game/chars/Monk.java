@@ -13,37 +13,50 @@ public class Monk extends BaseHero {
         super(attack, protection, damage, health, speed, name, x, y, fraction);
     }
 
+    private float mostDamaged;
+    private int mostDamagedInd;
+
+    private void getMostDamaged(ArrayList<BaseHero> heroes) {
+        mostDamaged = Float.MAX_VALUE;
+        mostDamagedInd = 0;
+        float [] hps = new float[heroes.size()];
+        for (int i = 0; i < heroes.size(); i++) {
+            hps[i] = heroes.get(i).health / heroes.get(i).maxHealth;
+        }
+
+        for (int i = 0; i < hps.length; i++) {
+            if (hps[i] < mostDamaged) {
+                mostDamaged = hps[i];
+                mostDamagedInd = i;
+            }
+        }
+    }
+
     @Override
     public void step(Party party) {
         ArrayList <BaseHero> allies = party.getByFraction(fraction, true);
-        float mostDamaged = (float) (allies.get(0).health / allies.get(0).maxHealth);
-        int mostDamagedInd = 0;
-        for (int i = 1; i < allies.size(); i++) {
-            if(((float) (allies.get(i).health / allies.get(i).maxHealth)) < mostDamaged) {
-                mostDamagedInd = i;
-                mostDamaged = (float) (allies.get(i).health / allies.get(i).maxHealth);
+        this.getMostDamaged(allies);
 
-            }
-        }
-        if (0.75 >= mostDamaged) {
-            ArrayList <BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
-            mostDamaged = 0;
-            mostDamagedInd = 0;
-            for (int i = 1; i < enemies.size(); i++) {
-                if(((float) (enemies.get(i).health / enemies.get(i).maxHealth)) < mostDamaged) {
-                    mostDamagedInd = i;
-                    mostDamaged = (float) (enemies.get(i).health / enemies.get(i).maxHealth);
-                }
-            }
+        if (mostDamaged >= 0.75f) {
+            ArrayList<BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
+            this.getMostDamaged(enemies);
             target = enemies.get(mostDamagedInd);
             damageValue = -damage[0];
             target.damage(damageValue);
+            System.out.println(target.getInfo());
+            return;
+        }
+        if (mostDamaged == 0.0f) {
+            target = allies.get(mostDamagedInd);
+            damageValue = -1;
+            target.status = "stand";
         }
         else {
             target = allies.get(mostDamagedInd);
-            if (mostDamaged == 0) { damageValue = -1; target.status = "stand"; }
-            else damageValue = damage[0];
-            target.damage(damageValue);
+            damageValue = damage[0];
         }
+        target.damage(damageValue);
+        System.out.println(target.getInfo());
     }
+
 }

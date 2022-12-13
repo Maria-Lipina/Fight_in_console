@@ -4,17 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила README.md, убрала комментарии в самом коде, исправила по пути мелкие ошибки">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="мелкие исправления в Party, step Spearman, Xbowman, Monk, логгере">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670770059822</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="мелкие исправления в Party, step Spearman, Xbowman, Monk, логгере">
+      <created>1670841488441</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670841488441</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -223,7 +224,8 @@
     <MESSAGE value="переписала step для монахов, добавила в BaseHero defaultLog. Из всех классов ушел myParty&#10;исправила ошибку в view и др. мелкие изменения с комментариями" />
     <MESSAGE value="Добавила README.md, убрала комментарии в самом коде" />
     <MESSAGE value="Добавила README.md, убрала комментарии в самом коде, исправила по пути мелкие ошибки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила README.md, убрала комментарии в самом коде, исправила по пути мелкие ошибки" />
+    <MESSAGE value="мелкие исправления в Party, step Spearman, Xbowman, Monk, логгере" />
+    <option name="LAST_COMMIT_MESSAGE" value="мелкие исправления в Party, step Spearman, Xbowman, Monk, логгере" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

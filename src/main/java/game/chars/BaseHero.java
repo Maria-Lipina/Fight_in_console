@@ -9,8 +9,8 @@ public abstract class BaseHero implements BaseInterface {
     protected int[] damage;
 
     protected int damageValue;
-    protected int health;
-    protected int maxHealth;
+    protected float health;
+    protected float maxHealth;
     protected int speed;
     protected String name;
 
@@ -63,7 +63,7 @@ public abstract class BaseHero implements BaseInterface {
         return name;
     }
 
-    public int getHealth() {
+    public float getHealth() {
         return health;
     }
 
