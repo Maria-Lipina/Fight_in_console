@@ -1,16 +1,18 @@
 package game.chars;
 
+import game.BattleField;
+
 import java.util.ArrayList;
 
 public class Monk extends BaseHero {
 
-    public Monk(int x, int y, String fraction) {
-        super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", x, y, fraction);
+    public Monk(int x, int y, String fraction, BattleField field) {
+        super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", x, y, fraction, field);
     }
 
     public Monk(int attack, int protection, int[] damage, int health, int speed,
-                String name, int x, int y, String fraction) {
-        super(attack, protection, damage, health, speed, name, x, y, fraction);
+                String name, int x, int y, String fraction, BattleField field) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field);
     }
 
     private float mostDamaged;
@@ -43,7 +45,6 @@ public class Monk extends BaseHero {
             target = enemies.get(mostDamagedInd);
             damageValue = -damage[0];
             target.damage(damageValue);
-            System.out.println(target.getInfo());
             return;
         }
         if (mostDamaged == 0.0f) {
@@ -56,7 +57,6 @@ public class Monk extends BaseHero {
             damageValue = damage[0];
         }
         target.damage(damageValue);
-        System.out.println(target.getInfo());
     }
 
 }

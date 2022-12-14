@@ -1,14 +1,16 @@
 package game.chars;
 
+import game.BattleField;
+
 public class Xbowman extends BaseHero {
     private int shoot;
-    public Xbowman(int x, int y, String fraction) {
-        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", x, y, fraction);
+    public Xbowman(int x, int y, String fraction, BattleField field) {
+        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", x, y, fraction, field);
         this.shoot = 16;
     }
     public Xbowman(int attack, int protection, int[] damage, int health, int speed,
-                   String name, int shoot, int x, int y, String fraction) {
-        super(attack, protection, damage, health, speed, name, x, y, fraction);
+                   String name, int shoot, int x, int y, String fraction, BattleField field) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field);
         this.shoot = shoot;
     }
 

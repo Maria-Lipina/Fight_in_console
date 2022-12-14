@@ -1,10 +1,10 @@
 package game.chars;
-import java.util.ArrayList;
+import game.BattleField;
 
 public class Peasant extends BaseHero {
 
-    public Peasant(int x, int y, String fraction) {
-        super(1, 1, new int[]{1, 1}, 1, 3, "Peasant", x, y, fraction);
+    public Peasant(int x, int y, String fraction, BattleField field) {
+        super(1, 1, new int[]{1, 1}, 1, 3, "Peasant", x, y, fraction, field);
     }
 
     @Override

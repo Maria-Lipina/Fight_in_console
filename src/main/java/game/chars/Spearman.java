@@ -1,19 +1,17 @@
 package game.chars;
 
-import java.util.ArrayList;
+import game.BattleField;
 
 public class Spearman extends BaseHero {
 
-    private int fieldSize;
-    public Spearman(int x, int y, String fraction, int fieldSize) {
-        super(4, 5,  new int[]{1,3}, 10, 4,  "Spearman", x, y, fraction);
-        this.fieldSize = fieldSize;
+
+    public Spearman(int x, int y, String fraction, BattleField field) {
+        super(4, 5,  new int[]{1,3}, 10, 4,  "Spearman", x, y, fraction, field);
     }
 
     public Spearman(int attack, int protection, int[] damage, int health, int speed,
-                    String name, int x, int y, String fraction, int fieldSize) {
-        super(attack, protection, damage, health, speed, name, x, y, fraction);
-        this.fieldSize = fieldSize;
+                    String name, int x, int y, String fraction, BattleField field) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field);
     }
 
     @Override
@@ -23,28 +21,39 @@ public class Spearman extends BaseHero {
         int x = position.x;
         int y = position.y;
 
-        if (position.distance(target.position) == (int) Math.sqrt(2)) {
+        int distance = position.distance(target.position);
+
+        boolean checkPos;
+        if (distance == (int) Math.sqrt(2)) {
             damageValue = super.damageValue(target);
             target.damage(damageValue);
             return;
         }
-        if (target.position.x < position.x && position.isValid(new Coordinates(--x, y, fieldSize), party.getAll())) {
-            position.x++;
+
+        checkPos = field.isValidPos(--x, y);
+        if (target.position.x < position.x && checkPos) {
+            field.placeMe(position.x, position.y, --position.x, position.y);
             damageValue = 0;
             return;
         }
-        if (target.position.x > position.x && position.isValid(new Coordinates(++x, y, fieldSize), party.getAll())) {
-            position.x++;
+        ++x;
+        checkPos = field.isValidPos(++x, y);
+        if (target.position.x > position.x && checkPos) {
+            field.placeMe(position.x, position.y, ++position.x, position.y);
             damageValue = 0;
             return;
         }
-        if (target.position.y < position.y && position.isValid(new Coordinates(x, --y, fieldSize), party.getAll())) {
-            position.y--;
+        --x;
+        checkPos = field.isValidPos(x, --y);
+        if (target.position.y < position.y && checkPos) {
+            field.placeMe(position.x, position.y, position.x, --position.y);
             damageValue = 0;
             return;
         }
-        if (target.position.y > position.y && position.isValid(new Coordinates(x, ++y, fieldSize), party.getAll())) {
-            position.y++;
+        ++y;
+        checkPos = field.isValidPos(x, ++y);
+        if (target.position.y > position.y && checkPos) {
+            field.placeMe(position.x, position.y, position.x, ++position.y);
             damageValue = 0;
         }
     }

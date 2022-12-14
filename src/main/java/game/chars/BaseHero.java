@@ -1,5 +1,7 @@
 package game.chars;
 
+import game.BattleField;
+
 import java.util.Arrays;
 
 public abstract class BaseHero implements BaseInterface {
@@ -7,6 +9,8 @@ public abstract class BaseHero implements BaseInterface {
     protected int defense;
 
     protected int[] damage;
+
+    protected BattleField field;
 
     protected int damageValue;
     protected float health;
@@ -25,7 +29,7 @@ public abstract class BaseHero implements BaseInterface {
     protected int id;
 
     public BaseHero(int attack, int defense, int[] damage, int health, int speed,
-                    String name, int x, int y, String fraction) {
+                    String name, int x, int y, String fraction, BattleField field) {
         this.attack = attack;
         this.defense = defense;
         this.damage = damage;
@@ -34,6 +38,8 @@ public abstract class BaseHero implements BaseInterface {
         this.speed = speed;
         this.name = name;
         this.position = new Coordinates(x, y);
+        this.field = field;
+        field.placeMe(x, y);
         this.status = "stand";
         this.id = idCount++;
         this.fraction = fraction;

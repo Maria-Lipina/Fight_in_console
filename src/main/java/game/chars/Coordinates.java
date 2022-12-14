@@ -18,6 +18,14 @@ public class Coordinates {
         this.y = y;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
     public boolean isSame(Coordinates pos) {
         return (this.x == pos.x && this.y == pos.y);
     }
@@ -35,15 +43,6 @@ public class Coordinates {
             }
         }
         return enemy.get(nearestInd);
-    }
-
-    public boolean isValid(Coordinates pos, ArrayList<BaseHero> party) { //TODO: переписать. Spearman ходит совсем неправильно
-        for (BaseHero h : party) {
-            if ((h.position.isSame(pos))
-                    || (pos.x >= fieldSize) || (pos.y >= fieldSize))
-                return false;
-        }
-        return true;
     }
 
     @Override

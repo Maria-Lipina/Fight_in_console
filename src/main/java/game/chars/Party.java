@@ -1,5 +1,5 @@
 package game.chars;
-
+import game.BattleField;
 import java.util.*;
 
 
@@ -7,12 +7,12 @@ public class Party {
     public ArrayList<BaseHero> members;
     private final ArrayList<String> fractions;
 
-    public Party(int teamSize, String [] request, String [] request1, int fieldSize) {
+    public Party(int teamSize, String [] request, String [] request1, int fieldSize, BattleField field) {
         fractions = new ArrayList<>();
         fractions.add(request[0]);
         fractions.add(request1[0]);
-        members = this.makeRandomly(teamSize, request, 0, 0, request[0], fieldSize);
-        members.addAll(this.makeRandomly(teamSize, request1, 0, fieldSize-1, request1[0], fieldSize));
+        members = this.makeRandomly(teamSize, request, 0, 0, request[0], field);
+        members.addAll(this.makeRandomly(teamSize, request1, 0, fieldSize-1, request1[0], field));
     }
 
 
@@ -20,18 +20,18 @@ public class Party {
         return fractions.get(index);
     }
 
-    private ArrayList<BaseHero> makeRandomly(int teamCount, String [] request, int x, int y, String fraction, int fieldSize) {
+    private ArrayList<BaseHero> makeRandomly(int teamCount, String [] request, int x, int y, String fraction, BattleField field) {
         ArrayList<BaseHero> team = new ArrayList<>();
         Random r = new Random();
         for (int i = 0; i < teamCount; i++) {
             switch (request[r.nextInt(1, request.length)]) {
-                case "Monk" -> team.add(new Monk(x++, y, fraction));
-                case "Peasant" -> team.add(new Peasant(x++, y, fraction));
-                case "Robber" -> team.add(new Robber(x++, y, fraction, fieldSize));
-                case "Sniper" -> team.add(new Sniper(x++, y, fraction));
-                case "Spearman" -> team.add(new Spearman(x++, y, fraction, fieldSize));
-                case "Warlock" -> team.add(new Warlock(x++, y, fraction));
-                case "Xbowman" -> team.add(new Xbowman(x++, y, fraction));
+                case "Monk" -> team.add(new Monk(x++, y, fraction, field));
+                case "Peasant" -> team.add(new Peasant(x++, y, fraction, field));
+                case "Robber" -> team.add(new Robber(x++, y, fraction, field));
+                case "Sniper" -> team.add(new Sniper(x++, y, fraction, field));
+                case "Spearman" -> team.add(new Spearman(x++, y, fraction, field));
+                case "Warlock" -> team.add(new Warlock(x++, y, fraction, field));
+                case "Xbowman" -> team.add(new Xbowman(x++, y, fraction, field));
             }
         }
         return team;
@@ -45,7 +45,7 @@ public class Party {
     }
 
     public void sortBySpeed() {
-        Comparator<BaseHero> comp = (h1, h2) -> Integer.compare(h1.speed, h2.speed);
+        Comparator<BaseHero> comp = Comparator.comparingInt(h -> h.speed);
         members.sort(comp.reversed());
     }
 
@@ -65,10 +65,6 @@ public class Party {
 
     public Party getAliveAsParty() {
         return new Party(this);
-    }
-
-    public ArrayList<BaseHero> getAll() {
-        return members;
     }
 
     public ArrayList<BaseHero> getByFraction(String fraction, boolean ally) {
