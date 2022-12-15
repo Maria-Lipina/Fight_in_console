@@ -9,7 +9,7 @@ import java.util.Collections;
 public class ConsoleView {
     private StringBuilder field;
     private StringBuilder charTable = new StringBuilder();
-    private int fieldSize;
+    private final int fieldSize;
 
     private Party members;
 
@@ -22,6 +22,14 @@ public class ConsoleView {
     public StringBuilder show(int step) {
 
         field.delete(0, field.length());
+
+        if (step == -1) {
+            field.append(Colors.ANSI_RED);
+            field.append("Game over!");
+            field.append(Colors.ANSI_RESET);
+            field.append("\n");
+            return field;
+        }
 
         if (step == 0) {
             field.append(Colors.ANSI_RED);
@@ -80,7 +88,7 @@ public class ConsoleView {
 
                 }
                 if(members.get(i).getFraction().equals(
-                        members.getFraction(0))) {
+                        members.getFractions().get(0))) {
                     field.append(Colors.ANSI_BLUE);
                     field.append(members.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);
@@ -96,7 +104,7 @@ public class ConsoleView {
                     return;
                 }
                 if(members.get(i).getFraction().equals(
-                        members.getFraction(1))) {
+                        members.getFractions().get(1))) {
                     field.append(Colors.ANSI_GREEN);
                     field.append(members.get(i).getName(), 0, 2);
                     field.append(Colors.ANSI_RESET);

@@ -19,12 +19,14 @@ public class Monk extends BaseHero {
     private int mostDamagedInd;
 
     private void getMostDamaged(ArrayList<BaseHero> heroes) {
-        mostDamaged = Float.MAX_VALUE;
+
         mostDamagedInd = 0;
         float [] hps = new float[heroes.size()];
         for (int i = 0; i < heroes.size(); i++) {
             hps[i] = heroes.get(i).health / heroes.get(i).maxHealth;
         }
+
+        mostDamaged = Float.MAX_VALUE;
 
         for (int i = 0; i < hps.length; i++) {
             if (hps[i] < mostDamaged) {
@@ -41,16 +43,27 @@ public class Monk extends BaseHero {
 
         if (mostDamaged >= 0.75f) {
             ArrayList<BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
+            if (enemies.size() == 0) {
+                target = this;
+                damageValue = 0;
+                return;
+            }
             this.getMostDamaged(enemies);
             target = enemies.get(mostDamagedInd);
             damageValue = -damage[0];
             target.damage(damageValue);
-            return;
+
         }
         if (mostDamaged == 0.0f) {
             target = allies.get(mostDamagedInd);
-            damageValue = -1;
-            target.status = "stand";
+            if (target == this) {
+                damageValue = 0;
+                return;
+            }
+            else{
+                damageValue = -1;
+                target.status = "stand";
+            }
         }
         else {
             target = allies.get(mostDamagedInd);

@@ -2,6 +2,8 @@ package game.chars;
 
 import game.BattleField;
 
+import java.util.ArrayList;
+
 public class Spearman extends BaseHero {
 
 
@@ -17,7 +19,14 @@ public class Spearman extends BaseHero {
     @Override
     public void step(Party party) {
 
-        target = position.findNearest(party.getAliveAsParty().getByFraction(fraction, false));
+        ArrayList<BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
+        if (enemies.size() == 0) {
+            target = this;
+            damageValue = 0;
+            return;
+        }
+
+        target = position.findNearest(enemies);
         int x = position.x;
         int y = position.y;
 

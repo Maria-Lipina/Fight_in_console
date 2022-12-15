@@ -8,19 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars">
-      <change afterPath="$PROJECT_DIR$/src/main/java/game/BattleField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/BattleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/BattleField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Coordinates.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671006334256</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars">
+      <created>1671027660658</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1671027660658</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">

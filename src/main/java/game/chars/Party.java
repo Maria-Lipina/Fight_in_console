@@ -16,8 +16,8 @@ public class Party {
     }
 
 
-    public String getFraction(int index) {
-        return fractions.get(index);
+    public ArrayList<String> getFractions() {
+        return fractions;
     }
 
     private ArrayList<BaseHero> makeRandomly(int teamCount, String [] request, int x, int y, String fraction, BattleField field) {
@@ -52,11 +52,10 @@ public class Party {
     public ArrayList<BaseHero> getAliveAsList() {
         ArrayList<BaseHero> res = new ArrayList<>();
         for (BaseHero h: members) {
-            if (!h.status.equals("dead")) res.add(h);
+            if (!h.status.equals("dead"))  res.add(h);
         }
         return res;
     }
-
 
     private Party(Party whole) {
         this.fractions = whole.fractions;

@@ -2,6 +2,8 @@ package game.chars;
 
 import game.BattleField;
 
+import java.util.ArrayList;
+
 public class Xbowman extends BaseHero {
     private int shoot;
     public Xbowman(int x, int y, String fraction, BattleField field) {
@@ -36,7 +38,13 @@ public class Xbowman extends BaseHero {
             damageValue = 0;
             return;
         }
-        target = position.findNearest(party.getAliveAsParty().getByFraction(fraction, false));
+        ArrayList<BaseHero> enemies = party.getAliveAsParty().getByFraction(fraction, false);
+        if (enemies.size() == 0) {
+            target = this;
+            damageValue = 0;
+            return;
+        }
+        target = position.findNearest(enemies);
         double dist = position.distance(target.position);
         damageValue = (dist < speed ?
                 super.damageValue(target) :

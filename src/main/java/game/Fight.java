@@ -19,28 +19,29 @@ public class Fight {
         this.members = new Party(teamSize, request, request1, fieldSize, field);
     }
 
-    public void round (int step) {
+    public boolean round (int step) {
         if (step == 0) {
             members.sortBySpeed();
-
-            for (int i = 0; i < field.field.length; i++) {
-                for (int j = 0; j < field.field[i].length; j++) {
-                    System.out.print(field.field[i][j] + " ");
-                }
-                System.out.println();
-            }
+            return true;
 
         } else {
             ArrayList <BaseHero> active = members.getAliveAsList();
-            for (BaseHero h: active) h.step(members);
-
-            for (int i = 0; i < field.field.length; i++) {
-                for (int j = 0; j < field.field[i].length; j++) {
-                    System.out.print(field.field[i][j] + " ");
-                }
-                System.out.println();
-            }
+            boolean flag = isContinue(active);
+            if (!flag) return false;
+            else for (BaseHero h : active) h.step(members);
         }
+        return true;
     }
+
+    public boolean isContinue (ArrayList<BaseHero> active) {
+        boolean res = false;
+        for (int i = 0; i < active.size()-1; i++) {
+            res = !active.get(i + 1).getFraction()
+                    .equals(active.get(i).getFraction());
+            if (res) break;
+        }
+        return res;
+    }
+
 }
 

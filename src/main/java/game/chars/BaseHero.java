@@ -109,8 +109,13 @@ public abstract class BaseHero implements BaseInterface {
     }
 
     public String defaultLog() {
-        return String.join(";", fraction, name+id,
-                position.toString(), target.name+target.id, target.position.toString(), String.valueOf(damageValue), target.status);
+        try {
+            return String.join(";", fraction, name + id,
+                    position.toString(), target.name + target.id, target.position.toString(), String.valueOf(damageValue), target.status);
+        }
+        catch(NullPointerException n){
+            return String.join(";", fraction, name + id, "invalid data for target");
+        }
     }
 
 }

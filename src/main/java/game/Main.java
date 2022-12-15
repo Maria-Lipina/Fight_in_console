@@ -15,15 +15,14 @@ public class Main {
         Fight fight = new Fight(teamSize, request, request1, fieldSize);
         Logger lg = new Logger(fight.getMembers());
         ConsoleView view = new ConsoleView(fieldSize, fight.getMembers());
+        System.out.println("Print Enter to begin or Q to exit");
 
-        do {
-            fight.round(step);
+        while (!((char) System.in.read() == 'Q') && fight.round(step)) {
             lg.printDefault(step);
             System.out.println(view.show(step));
             step++;
-
-        } while ((char) System.in.read() != 'Q');
-
+        }
+        System.out.println(view.show(-1));
 
     }
 }
