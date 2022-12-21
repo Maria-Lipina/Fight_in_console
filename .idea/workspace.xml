@@ -7,8 +7,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="добавила к персонажам, Party, Fight новые перегрузки, чтобы создавать юнит-отряды как одного юнита">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -204,14 +215,7 @@
       <option name="project" value="LOCAL" />
       <updated>1671122952574</updated>
     </task>
-    <task id="LOCAL-00016" summary="добавила к персонажам, Party, Fight новые перегрузки, чтобы создавать юнит-отряды как одного юнита">
-      <created>1671648440610</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1671648440610</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -268,8 +272,7 @@
     <MESSAGE value="появился класс" />
     <MESSAGE value="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars" />
     <MESSAGE value="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)" />
-    <MESSAGE value="добавила к персонажам, Party, Fight новые перегрузки, чтобы создавать юнит-отряды как одного юнита" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавила к персонажам, Party, Fight новые перегрузки, чтобы создавать юнит-отряды как одного юнита" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
