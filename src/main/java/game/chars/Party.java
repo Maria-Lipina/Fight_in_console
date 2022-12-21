@@ -15,6 +15,14 @@ public class Party {
         members.addAll(this.makeRandomly(teamSize, request1, 0, fieldSize-1, request1[0], field));
     }
 
+    public Party(String [] request, String [] request1, int [] requestQuantity, int [] requestQuantity1, int fieldSize, BattleField field) {
+        fractions = new ArrayList<>();
+        fractions.add(request[0]);
+        fractions.add(request1[0]);
+        members = this.makeBalanced(request, requestQuantity, 0, 0, request[0], field);
+        members.addAll(this.makeBalanced(request1, requestQuantity1, 0, fieldSize-1, request1[0], field));
+    }
+
 
     public ArrayList<String> getFractions() {
         return fractions;
@@ -32,6 +40,22 @@ public class Party {
                 case "Spearman" -> team.add(new Spearman(x++, y, fraction, field));
                 case "Warlock" -> team.add(new Warlock(x++, y, fraction, field));
                 case "Xbowman" -> team.add(new Xbowman(x++, y, fraction, field));
+            }
+        }
+        return team;
+    }
+
+    private ArrayList<BaseHero> makeBalanced(String [] requestClass, int [] requestQuantity, int x, int y, String fraction, BattleField field) {
+        ArrayList<BaseHero> team = new ArrayList<>();
+        for (int i = 1; i < requestClass.length; i++) {
+            switch (requestClass[i]) {
+                case "Monk" -> team.add(new Monk(x++, y, fraction, field, requestQuantity[i]));
+                case "Peasant" -> team.add(new Peasant(x++, y, fraction, field, requestQuantity[i]));
+                case "Robber" -> team.add(new Robber(x++, y, fraction, field, requestQuantity[i]));
+                case "Sniper" -> team.add(new Sniper(x++, y, fraction, field, requestQuantity[i]));
+                case "Spearman" -> team.add(new Spearman(x++, y, fraction, field, requestQuantity[i]));
+                case "Warlock" -> team.add(new Warlock(x++, y, fraction, field, requestQuantity[i]));
+                case "Xbowman" -> team.add(new Xbowman(x++, y, fraction, field, requestQuantity[i]));
             }
         }
         return team;

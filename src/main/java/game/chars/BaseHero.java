@@ -47,6 +47,27 @@ public abstract class BaseHero implements BaseInterface {
         this.damageValue = 0;
     }
 
+    public BaseHero(int attack, int defense, int[] damage, int health, int speed,
+                    String name, int x, int y, String fraction, BattleField field, int quantity) {
+        this.attack = attack;
+        this.defense = defense;
+        this.damage = damage;
+        this.damage[0] = this.damage[0] * quantity;
+        this.damage[1] = this.damage[0] * quantity;
+        this.maxHealth = health;
+        this.health = maxHealth * quantity;
+        this.speed = speed;
+        this.name = name;
+        this.position = new Coordinates(x, y);
+        this.field = field;
+        field.placeMe(x, y);
+        this.status = "stand";
+        this.id = idCount++;
+        this.fraction = fraction;
+        this.target = this;
+        this.damageValue = 0;
+    }
+
     public String getFraction() {
         return fraction;
     }

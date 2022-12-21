@@ -16,6 +16,17 @@ public class Xbowman extends BaseHero {
         this.shoot = shoot;
     }
 
+    public Xbowman(int x, int y, String fraction, BattleField field, int quantity) {
+        super(6, 3, new int[]{2,3}, 10, 4,  "Xbowman", x, y, fraction, field, quantity);
+        this.shoot = 16;
+    }
+    public Xbowman(int attack, int protection, int[] damage, int health, int speed,
+                   String name, int shoot, int x, int y, String fraction, BattleField field, int quantity) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field, quantity);
+        this.shoot = shoot;
+    }
+
+
     @Override
     public String getInfo() {
         return super.getInfo() +

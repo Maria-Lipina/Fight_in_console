@@ -7,6 +7,10 @@ public class Peasant extends BaseHero {
         super(1, 1, new int[]{1, 1}, 1, 3, "Peasant", x, y, fraction, field);
     }
 
+    public Peasant(int x, int y, String fraction, BattleField field, int quantity) {
+        super(1, 1, new int[]{1, 1}, 1, 3, "Peasant", x, y, fraction, field, quantity);
+    }
+
     @Override
     public void step(Party party) {
         if (status.equals("used")) status = "stand";
