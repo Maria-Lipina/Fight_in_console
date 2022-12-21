@@ -10,9 +10,18 @@ public class Monk extends BaseHero {
         super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", x, y, fraction, field);
     }
 
+    public Monk(int x, int y, String fraction, BattleField field, int quantity) {
+        super(12, 7, new int[]{-4,-4}, 30, 5, "Monk", x, y, fraction, field, quantity);
+    }
+
     public Monk(int attack, int protection, int[] damage, int health, int speed,
                 String name, int x, int y, String fraction, BattleField field) {
         super(attack, protection, damage, health, speed, name, x, y, fraction, field);
+    }
+
+    public Monk(int attack, int protection, int[] damage, int health, int speed,
+                String name, int x, int y, String fraction, BattleField field, int quantity) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field, quantity);
     }
 
     private float mostDamaged;

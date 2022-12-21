@@ -19,6 +19,11 @@ public class Fight {
         this.members = new Party(teamSize, request, request1, fieldSize, field);
     }
 
+    public Fight(String [] request, String [] request1, int [] requestQuantity, int [] requestQuantity1, int fieldSize) {
+        field = new BattleField(fieldSize);
+        this.members = new Party(request, request1, requestQuantity, requestQuantity1, fieldSize, field);
+    }
+
     public boolean round (int step) {
         if (step == 0) {
             members.sortBySpeed();

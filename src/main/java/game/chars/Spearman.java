@@ -16,6 +16,15 @@ public class Spearman extends BaseHero {
         super(attack, protection, damage, health, speed, name, x, y, fraction, field);
     }
 
+    public Spearman(int x, int y, String fraction, BattleField field, int quantity) {
+        super(4, 5,  new int[]{1,3}, 10, 4,  "Spearman", x, y, fraction, field, quantity);
+    }
+
+    public Spearman(int attack, int protection, int[] damage, int health, int speed,
+                    String name, int x, int y, String fraction, BattleField field, int quantity) {
+        super(attack, protection, damage, health, speed, name, x, y, fraction, field, quantity);
+    }
+
     @Override
     public void step(Party party) {
 

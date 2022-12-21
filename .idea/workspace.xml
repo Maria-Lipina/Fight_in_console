@@ -7,18 +7,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/BattleField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/BattleField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Robber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Sniper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Warlock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="redo_step_turn" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,18 +57,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/IT/Java/Fight in console&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/IT/Java/Fight in console",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JAVA&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\IT\Java\Fight in console" />
@@ -205,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671027660658</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)">
+      <created>1671122952574</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1671122952574</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -261,7 +271,8 @@
     <MESSAGE value="d Readme новый TODO пункт, Monk, Logger, Spearman мелкие исправления (перед созданием Battlefield)" />
     <MESSAGE value="появился класс" />
     <MESSAGE value="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars" />
-    <option name="LAST_COMMIT_MESSAGE" value="README обновила, Spearman, Robber теперь ходят правильно. Появился новый класс Battlefield с соответствующими обновлениями в пакете chars" />
+    <MESSAGE value="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обработала исключения (Null Pointer, Out the bound, IO), добавила заглушек и новые методы (fight.round теперь boolean)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

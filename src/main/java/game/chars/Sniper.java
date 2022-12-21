@@ -8,4 +8,8 @@ public class Sniper extends Xbowman {
         super(12, 10, new int[]{8, 10}, 15, 9, "Sniper", 32, x, y, fraction, field);
     }
 
+    public Sniper(int x, int y, String fraction, BattleField field, int quantity) {
+        super(12, 10, new int[]{8, 10}, 15, 9, "Sniper", 32, x, y, fraction, field, quantity);
+    }
+
 }
