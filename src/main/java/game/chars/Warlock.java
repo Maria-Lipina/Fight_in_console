@@ -2,7 +2,6 @@ package game.chars;
 
 import game.BattleField;
 
-import java.util.ArrayList;
 
 public class Warlock extends Monk {
 
