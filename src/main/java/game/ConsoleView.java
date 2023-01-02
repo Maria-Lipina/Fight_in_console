@@ -5,20 +5,33 @@ import game.chars.Party;
 
 import java.util.Collections;
 
+/**
+ * Класс для отображения в консоли игрового поля, персонажей на нем, а так же статуса персонажей в течение каждого хода игры.
+*/
+ public class ConsoleView {
 
-public class ConsoleView {
     private StringBuilder field;
     private StringBuilder charTable = new StringBuilder();
     private final int fieldSize;
 
     private Party members;
 
+    /**
+     * Создает объект ConsoleView с заданными параметрами
+     * @param fieldSize размер игрового поля в формате int. Игровое поле - это таблица размера fieldSize х fieldSize.
+     * @param members ссылка на объект класса Party, в котором содержатся данные о персонажах в игре и их статусе.
+     */
         public ConsoleView(int fieldSize, Party members) {
         this.field = new StringBuilder();
         this.fieldSize = fieldSize;
         this.members = members;
     }
 
+    /**
+     * составляет StringBuilder, в котором каждый раунд собирается информация о статусе игры, игровом поле, персонажах на нем и их статусе.
+     * @param step номер хода. Если игра закончена, то step = -1
+     * @return StringBuilder. Если игра закончена, то StringBuilder содержит только уведомление Game over!
+     */
     public StringBuilder show(int step) {
 
         field.delete(0, field.length());
@@ -136,7 +149,7 @@ public class ConsoleView {
     }
 }
 
-/*Шпаргалка по значению кодовых точек
+/* Шпаргалка по значению кодовых точек
  * '\u250c' - верхний левый угол
  * '\u252c' - пересечение верхней горизонтальной границы и внутренней вертикальной
  * '\u2510' - верхний правый угол
@@ -151,6 +164,9 @@ public class ConsoleView {
  * "___"
  * */
 
+/**
+ * Статический класс, состоящий полностью из констант, обозначающих кодовые точки для разных цветов шрифта, фона текста в консоли.
+ */
 class Colors {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_BLACK = "\u001B[30m";
