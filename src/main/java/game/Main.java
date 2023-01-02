@@ -4,7 +4,7 @@ import java.io.IOException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException { //TODO: да у меня тут исключения совсем не обработаны
 
         int step = 0;
         int teamSize = 10;
