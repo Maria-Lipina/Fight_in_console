@@ -19,7 +19,7 @@ import java.util.Collections;
     /**
      * Создает объект ConsoleView с заданными параметрами
      * @param fieldSize размер игрового поля в формате int. Игровое поле - это таблица размера fieldSize х fieldSize.
-     * @param members ссылка на объект класса Party, в котором содержатся данные о персонажах в игре и их статусе.
+     * @param members ссылка на объект класса {@link game.chars.Party Party}, в котором содержатся данные о персонажах в игре и их статусе.
      */
         public ConsoleView(int fieldSize, Party members) {
         this.field = new StringBuilder();
@@ -28,9 +28,9 @@ import java.util.Collections;
     }
 
     /**
-     * составляет StringBuilder, в котором каждый раунд собирается информация о статусе игры, игровом поле, персонажах на нем и их статусе.
+     * составляет {@link java.lang.StringBuilder StringBuilder}, в котором каждый раунд собирается информация о статусе игры, игровом поле, персонажах на нем и их статусе.
      * @param step номер хода. Если игра закончена, то step = -1
-     * @return StringBuilder. Если игра закончена, то StringBuilder содержит только уведомление Game over!
+     * @return {@link java.lang.StringBuilder StringBuilder}. Если игра закончена, то результат содержит только уведомление Game over!
      */
     public StringBuilder show(int step) {
 
