@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила JavaDoc к Logger и больше TODO комментариев">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила ссылок в JavaDoc к Logger и ConsoleView, добавила JavaDoc в класс Fight">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/Fight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Fight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/game/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -229,7 +229,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672684356602</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Добавила ссылок в JavaDoc к Logger и ConsoleView, добавила JavaDoc в класс Fight">
+      <created>1672726507175</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1672726507175</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -304,7 +311,8 @@
     <MESSAGE value="Добавила JavaDoc к BattleField - ура, начало положено. Убрала пункт о libGDX из README.md. Немного исправила Monk, Warlock" />
     <MESSAGE value="Добавила JavaDoc к ConsoleView" />
     <MESSAGE value="Добавила JavaDoc к Logger и больше TODO комментариев" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила JavaDoc к Logger и больше TODO комментариев" />
+    <MESSAGE value="Добавила ссылок в JavaDoc к Logger и ConsoleView, добавила JavaDoc в класс Fight" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила ссылок в JavaDoc к Logger и ConsoleView, добавила JavaDoc в класс Fight" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
