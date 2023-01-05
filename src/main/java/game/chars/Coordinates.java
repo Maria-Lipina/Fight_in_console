@@ -4,37 +4,51 @@ import static java.lang.Math.sqrt;
 
 import java.util.ArrayList;
 
+/**
+ * Хранит координаты персонажа (представитель наследного класса от {@link game.chars.BaseHero BaseHero}) как отдельный объект, с помощью внутренней логики которого персонажи ориентируются относительно друг друга, например во внутренней логике совершения хода.
+ */
 public class Coordinates {
-    public int x, y, fieldSize;
+    protected int x, y;
 
-    public Coordinates (int x, int y, int fieldSize) {
-        this.x = x;
-        this.y = y;
-        this.fieldSize = fieldSize;
-    }
-
+    /**
+     * Сохраняет координаты персонажа на игровом поле в отдельном
+     * @param x номер строки в {@link game.BattleField BattleField}
+     * @param y номер столбца в {@link game.BattleField BattleField}
+     */
     public Coordinates (int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    /**
+     * @return номер строки в {@link game.BattleField BattleField}
+     */
     public int getX() {
         return x;
     }
 
+    /**
+     * @return номер столбца в {@link game.BattleField BattleField}
+     */
     public int getY() {
         return y;
     }
 
+    /**
+     * сравнивает координаты, хранящиеся в вызывающем объекте, с координатами, переданными в параметрах (применяется при подготовке вида через {@link game.ConsoleView ConsoleView}).
+     * @param pos Coordinates
+     * @return true, если this.x == pos.x && this.y == pos.y.
+     */
     public boolean isSame(Coordinates pos) {
         return (this.x == pos.x && this.y == pos.y);
     }
 
-    public int distance(Coordinates pos) {
+
+    protected int distance(Coordinates pos) {
         return (int) sqrt(pow((pos.x - this.x), 2) + pow((pos.y - this.y), 2));
     }
 
-    public BaseHero findNearest(ArrayList<BaseHero> enemy) {
+    protected BaseHero findNearest(ArrayList<BaseHero> enemy) {
         int dist = this.distance(enemy.get(0).position);
         int nearestInd = 0;
         for (int i = 1; i < enemy.size(); i++) {
