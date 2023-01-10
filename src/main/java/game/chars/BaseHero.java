@@ -43,7 +43,7 @@ public abstract class BaseHero implements BaseInterface {
      * @param x Номер строки в матрице {@link game.BattleField BattleField}.
      * @param y Номер столбца в матрице {@link game.BattleField BattleField}. Вместе с параметром x определяет положение персонажа на поле боя.
      * @param fraction Название фракции, команды, относительно которой персонаж различает союзников и противников.
-     * @param field Ссылка на объект класса {@link game.BattleField BattleField}, который и \вляется полем боя с переданными на него координатами x и y.
+     * @param field Ссылка на объект класса {@link game.BattleField BattleField}, который и является полем боя с переданными на него координатами x и y.
      */
     public BaseHero(int attack, int defense, int[] damage, int health, int speed,
                     String name, int x, int y, String fraction, BattleField field) {
