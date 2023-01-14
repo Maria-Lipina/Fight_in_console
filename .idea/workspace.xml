@@ -7,9 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила JavaDoc к Coordinates, заодно немного подправила сам код">
+    <list default="true" id="fee4b161-6837-4177-884b-ebaf51acaf42" name="Changes" comment="Добавила JavaDoc к конструкторам наследников BaseHero">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/BaseHero.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Peasant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Spearman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/game/chars/Xbowman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672905238480</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Добавила JavaDoc к конструкторам наследников BaseHero">
+      <created>1673344786742</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673344786742</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -301,7 +315,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial Commit" />
     <MESSAGE value="перенесла таблицу с персонажами" />
     <MESSAGE value="перенесла код из старого репозитория" />
     <MESSAGE value="перенесла код из старого репозитория-форка" />
@@ -326,7 +339,8 @@
     <MESSAGE value="Добавила ссылок в JavaDoc к Logger и ConsoleView, добавила JavaDoc в класс Fight" />
     <MESSAGE value="Добавила JavaDoc к BaseInterface и BaseHero" />
     <MESSAGE value="Добавила JavaDoc к Coordinates, заодно немного подправила сам код" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавила JavaDoc к Coordinates, заодно немного подправила сам код" />
+    <MESSAGE value="Добавила JavaDoc к конструкторам наследников BaseHero" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавила JavaDoc к конструкторам наследников BaseHero" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

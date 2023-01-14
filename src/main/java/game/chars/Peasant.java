@@ -30,6 +30,10 @@ public class Peasant extends BaseHero {
         super(1, 1, new int[]{1, 1}, 1, 3, "Peasant", x, y, fraction, field, quantity);
     }
 
+    /**
+     * Для крестьянина (Peasant) сделать ход - это набрать боеприпасов для стрелков {@link game.chars.Xbowman Xbowman}, {@link game.chars.Sniper Sniper}.
+     * @param party Объект класса {@link game.chars.Party Party}. Через него персонаж, совершающий ход, получает информацию о других участниках сражения: союзниках и противниках.
+     */
     @Override
     public void step(Party party) {
         if (status.equals("used")) status = "stand";

@@ -38,11 +38,18 @@ public class Spearman extends BaseHero {
         super(4, 5,  new int[]{1,3}, 10, 4,  "Spearman", x, y, fraction, field, quantity);
     }
 
+    /**
+     * см. родительский класс {@link game.chars.BaseHero#BaseHero(int, int, int[], int, int, String, int, int, String, BattleField, int) BaseHero}
+     */
     public Spearman(int attack, int protection, int[] damage, int health, int speed,
                     String name, int x, int y, String fraction, BattleField field, int quantity) {
         super(attack, protection, damage, health, speed, name, x, y, fraction, field, quantity);
     }
 
+    /**
+     * Для Копейщика (Spearman) и Разбойника (Robber) сделать ход - это найти ближайшего соперника и либо приблизиться к нему, либо нанести урон, если расстояние позволяет.
+     * @param party Объект класса {@link game.chars.Party Party}. Через него персонаж, совершающий ход, получает информацию о других участниках сражения: союзниках и противниках.
+     */
     @Override
     public void step(Party party) {
 

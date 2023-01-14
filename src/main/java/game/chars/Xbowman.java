@@ -43,6 +43,9 @@ public class Xbowman extends BaseHero {
     }
 
 
+    /**
+     * см. родительский класс {@link game.chars.BaseHero#BaseHero(int, int, int[], int, int, String, int, int, String, BattleField, int) BaseHero}
+     */
     public Xbowman(int attack, int protection, int[] damage, int health, int speed,
                    String name, int shoot, int x, int y, String fraction, BattleField field, int quantity) {
         super(attack, protection, damage, health, speed, name, x, y, fraction, field, quantity);
@@ -56,6 +59,10 @@ public class Xbowman extends BaseHero {
                 ";shoot=" + shoot;
     }
 
+    /**
+     * Для Арбалетчика (Xbowman) или Снайпера (Sniper) сделать ход - это забрать боеприпасы у крестьянина из своей команды и выстрелить в ближайшего противника. Если боеприпас взять не у кого, то выстрел производится за счет собственного, ограниченного запаса снарядов.
+     * @param party Объект класса {@link game.chars.Party Party}. Через него персонаж, совершающий ход, получает информацию о других участниках сражения: союзниках и противниках.
+     */
     @Override
     public void step(Party party) {
 
